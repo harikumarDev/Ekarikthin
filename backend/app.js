@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const dotenv = require("dotenv");
 const oraganisers = require("./routes/oragniser");
+const eventRegister = require("./routes/eventRegister");
 
 dotenv.config({ path: "backend/config/config.env" });
 const app = express();
@@ -12,7 +13,8 @@ app.use(express.static("public"));
 app.use(express.json({ limit: "60mb" }));
 
 // API's
-app.use("/api/v1/organisers", oraganisers);
+app.use("/api/organisers", oraganisers);
+app.use("/api/register", eventRegister);
 
 if (process.env.NODE_ENV === "PRODUCTION") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));

@@ -1,0 +1,82 @@
+.registerEvent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 8px 2px rgb(184, 179, 179);
+  border-radius: 10px;
+  width: 65vw;
+  background-color: rgb(250, 249, 249);
+  padding: 0.5em;
+}
+
+.regForm {
+  margin: 0 auto;
+  width: 32%;
+}
+
+.form > form > * {
+  margin-bottom: 13px;
+}
+
+.regSub {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.regTitle {
+  padding: 0 0 0.6em 0;
+}
+
+.formImg {
+  margin-right: 2%;
+  background: #005aa7;
+  background: -webkit-linear-gradient(to right, #fffde4, #005aa7);
+  background: linear-gradient(to right, #ece798, #2786da);
+
+  border-radius: 20px 120px 20px 200px;
+  padding: 0 20px;
+}
+
+.formImg > img {
+  height: 600px;
+  width: 30em;
+}
+
+@media only screen and (max-width: 1440px) {
+  .formContainer {
+    width: 85vw;
+    position: absolute;
+    top: 10em;
+  }
+
+  .regTitle {
+    margin-top: 10px;
+  }
+
+  .regForm {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .formImg {
+    display: none;
+  }
+}
+
+.reg-token {
+  padding: 1em 0;
+}
+
+.reg-token > span {
+  color: blue;
+}

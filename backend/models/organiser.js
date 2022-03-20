@@ -14,6 +14,14 @@ const organiserSchema = new mongoose.Schema(
       type: String,
       required: [true, "Event is required"],
     },
+    instaLink: {
+      type: String,
+      required: [true, "Instagram link is required"],
+    },
+    fbLink: {
+      type: String,
+      required: [true, "Facebook link is required"],
+    },
   },
   {
     timestamps: true,
