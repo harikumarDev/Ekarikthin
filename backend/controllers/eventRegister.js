@@ -2,6 +2,7 @@ const randToken = require("rand-token");
 const Razorapy = require("razorpay");
 const crypto = require("crypto");
 const eventReg = require("../models/eventRegister");
+const transporter = require("../config/mail");
 
 const genToken = () => {
   return "EK" + randToken.generate(6);
@@ -38,6 +39,52 @@ exports.eventRegister = async (req, res) => {
 
   try {
     await newEventReg.save();
+
+    const mailOptions = {
+      from: process.env.FROM_EMAIL,
+      to: email,
+      subject: "Ekarikthin'22 Registration",
+      html: `<h1>Thank you for registering for Ekarikthin'22</h1>
+      <div style="text-align: center;">
+        <p>Your registration is confirmed. Please find the details below:</p>
+        <p>Name: ${name}</p>
+        <p>Category: ${category}</p>
+        <p>Event: ${event}</p>
+        <p>Event Code: ${eventCode}</p>
+        <p>Token ID: <b style="color: blue;">${newEventReg.tokenId}</b></p>
+        <p>Payment Mode: ${paymentMode}</p>
+        <p>Please keep this token ID for future reference.</p>
+        <p>Thank you for registering for Ekarikthin'22</p>
+      </div>`,
+      auth: {
+        type: "Bearer",
+        user: process.env.GMAIL_USERNAME,
+        pass: process.env.GMAIL_PASSWORD,
+      },
+    };
+
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log("====================================");
+        console.log("MSG SENDING ERR:: ", err);
+        console.log("====================================");
+        return res.status(500).json({
+          success: false,
+          code: "MAIL_ERROR",
+          message: "Error in sending mail",
+        });
+      } else if (info.rejected.length > 0) {
+        console.log("====================================");
+        console.log("MSG SENDING REJECTED:: ", info.rejected);
+        console.log("====================================");
+        return res.status(500).json({
+          success: false,
+          code: "MAIL_ERROR",
+          message: "Error in sending mail",
+        });
+      }
+    });
+
     res.status(201).json({
       success: true,
       data: {
@@ -175,20 +222,66 @@ exports.confirmRegistration = async (req, res) => {
       } = req.body;
 
       const arr = entity.description.split(",");
+      const name = entity.card.name;
+      const email = entity.email;
+      const phone = entity.contact.substr(3);
+      const paymentMode = "Online";
 
       const newEventReg = new eventReg({
-        name: entity.card.name,
-        email: entity.email,
-        phone: entity.contact.substr(3),
+        name,
+        email,
+        phone,
+        eventCode: arr[0],
         category: arr[1],
         event: arr[2],
-        eventCode: arr[0],
         tokenId: genToken(),
         paid: true,
-        paymentMode: "Online",
+        paymentMode,
       });
 
       await newEventReg.save();
+
+      const mailOptions = {
+        from: process.env.FROM_EMAIL,
+        to: email,
+        subject: "Ekarikthin'22 Registration",
+        html: `<h1>Thank you for registering for Ekarikthin'22</h1>
+        <p>Your registration is confirmed. Please find the details below:</p>
+        <p>Name: ${name}</p>
+        <p>Category: ${arr[1]}</p>
+        <p>Event: ${arr[2]}</p>
+        <p>Event Code: ${arr[0]}</p>
+        <p>Token ID: <b>${newEventReg.tokenId}</b></p>
+        <p>Payment Mode: ${paymentMode}</p>
+        <p>Please keep this token ID for future reference.</p>`,
+        auth: {
+          type: "Bearer",
+          user: process.env.GMAIL_USERNAME,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+      };
+
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.log("====================================");
+          console.log("MSG SENDING ERR:: ", err);
+          console.log("====================================");
+          return res.status(500).json({
+            success: false,
+            code: "MAIL_ERROR",
+            message: "Error in sending mail",
+          });
+        } else if (info.rejected.length > 0) {
+          console.log("====================================");
+          console.log("MSG SENDING REJECTED:: ", info.rejected);
+          console.log("====================================");
+          return res.status(500).json({
+            success: false,
+            code: "MAIL_ERROR",
+            message: "Error in sending mail",
+          });
+        }
+      });
 
       res.status(200).json({
         success: true,
