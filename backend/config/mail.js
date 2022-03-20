@@ -17,4 +17,34 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-module.exports = transporter;
+const mailOptionsFunc = (
+  name,
+  category,
+  event,
+  eventCode,
+  token,
+  payMode,
+  email
+) => {
+  return {
+    from: process.env.FROM_EMAIL,
+    to: email,
+    subject: "Ekarikthin'22 Registration",
+    html: `<h1>Thank you for registering for Ekarikthin'22</h1>
+      <b>Your registration is confirmed. Please find the details below:</b>
+      <p>Name: ${name}</p>
+      <p>Category: ${category}</p>
+      <p>Event: ${event}</p>
+      <p>Event Code: ${eventCode}</p>
+      <p>Token ID: <b style="color: blue;">${token}</b></p>
+      <p>Payment Mode: ${payMode}</p>
+      <b style="color: red;">Please keep this token ID for future reference.</b>`,
+    auth: {
+      type: "Bearer",
+      user: process.env.GMAIL_USERNAME,
+      pass: process.env.GMAIL_PASSWORD,
+    },
+  };
+};
+
+module.exports = { transporter, mailOptionsFunc };

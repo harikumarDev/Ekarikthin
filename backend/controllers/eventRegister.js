@@ -2,7 +2,7 @@ const randToken = require("rand-token");
 const Razorapy = require("razorpay");
 const crypto = require("crypto");
 const eventReg = require("../models/eventRegister");
-const transporter = require("../config/mail");
+const { transporter, mailOptionsFunc } = require("../config/mail");
 
 const genToken = () => {
   return "EK" + randToken.generate(6);
@@ -40,28 +40,15 @@ exports.eventRegister = async (req, res) => {
   try {
     await newEventReg.save();
 
-    const mailOptions = {
-      from: process.env.FROM_EMAIL,
-      to: email,
-      subject: "Ekarikthin'22 Registration",
-      html: `<h1>Thank you for registering for Ekarikthin'22</h1>
-      <div style="text-align: center;">
-        <p>Your registration is confirmed. Please find the details below:</p>
-        <p>Name: ${name}</p>
-        <p>Category: ${category}</p>
-        <p>Event: ${event}</p>
-        <p>Event Code: ${eventCode}</p>
-        <p>Token ID: <b style="color: blue;">${newEventReg.tokenId}</b></p>
-        <p>Payment Mode: ${paymentMode}</p>
-        <p>Please keep this token ID for future reference.</p>
-        <p>Thank you for registering for Ekarikthin'22</p>
-      </div>`,
-      auth: {
-        type: "Bearer",
-        user: process.env.GMAIL_USERNAME,
-        pass: process.env.GMAIL_PASSWORD,
-      },
-    };
+    const mailOptions = mailOptionsFunc(
+      name,
+      category,
+      event,
+      eventCode,
+      newEventReg.tokenId,
+      paymentMode,
+      email
+    );
 
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
@@ -241,25 +228,15 @@ exports.confirmRegistration = async (req, res) => {
 
       await newEventReg.save();
 
-      const mailOptions = {
-        from: process.env.FROM_EMAIL,
-        to: email,
-        subject: "Ekarikthin'22 Registration",
-        html: `<h1>Thank you for registering for Ekarikthin'22</h1>
-        <p>Your registration is confirmed. Please find the details below:</p>
-        <p>Name: ${name}</p>
-        <p>Category: ${arr[1]}</p>
-        <p>Event: ${arr[2]}</p>
-        <p>Event Code: ${arr[0]}</p>
-        <p>Token ID: <b>${newEventReg.tokenId}</b></p>
-        <p>Payment Mode: ${paymentMode}</p>
-        <p>Please keep this token ID for future reference.</p>`,
-        auth: {
-          type: "Bearer",
-          user: process.env.GMAIL_USERNAME,
-          pass: process.env.GMAIL_PASSWORD,
-        },
-      };
+      const mailOptions = mailOptionsFunc(
+        name,
+        arr[1],
+        arr[2],
+        arr[0],
+        newEventReg.tokenId,
+        paymentMode,
+        email
+      );
 
       transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
