@@ -61,7 +61,6 @@ export default function VerifyToken() {
         notifyError("Something went wrong. Please try again later");
       }
     } catch (err) {
-      console.log(err);
       notifyError("Something went wrong. Please try again later");
     }
   };
@@ -69,31 +68,47 @@ export default function VerifyToken() {
   return (
     <Main title="Verify Token">
       {regDetails ? (
-        <div className="regCont">
-          <div className="regDetails">
-            <h3>Name: {regDetails.name}</h3>
-            <p>Category: {regDetails.category.toUpperCase()}</p>
-            <p>Event: {regDetails.event}</p>
-            <p>Token: {regDetails.tokenId}</p>
-            <p>Payment status: {regDetails.paid ? "Paid" : "Not Paid"}</p>
-            <p>Payment Mode: {regDetails.paymentMode}</p>
-          </div>
-          {!regDetails.paid && (
-            <div className="updatePay">
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => {
-                  if (window.confirm("Confirm to Mark token as paid?")) {
-                    updatePay(regDetails.tokenId);
-                  }
-                }}
-              >
-                Mark as paid
-              </Button>
+        <>
+          <div className="regCont">
+            <div className="regDetails">
+              <h3>Name: {regDetails.name}</h3>
+              <p>Category: {regDetails.category.toUpperCase()}</p>
+              <p>Event: {regDetails.event}</p>
+              <p>Token: {regDetails.tokenId}</p>
+              <p>Payment status: {regDetails.paid ? "Paid" : "Not Paid"}</p>
+              <p>Payment Mode: {regDetails.paymentMode}</p>
             </div>
-          )}
-        </div>
+            {!regDetails.paid && (
+              <div className="updatePay">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => {
+                    if (window.confirm("Confirm to Mark token as paid?")) {
+                      updatePay(regDetails.tokenId);
+                    }
+                  }}
+                >
+                  Mark as paid
+                </Button>
+              </div>
+            )}
+          </div>
+          <div
+            style={{
+              color: "blue",
+              float: "right",
+              textDecoration: "underline",
+              cursor: "pointer",
+              fontSize: "1.3em",
+            }}
+            onClick={() => {
+              window.location.reload(false);
+            }}
+          >
+            Verify another Token
+          </div>
+        </>
       ) : (
         <div className="form">
           <form onSubmit={getDetails}>

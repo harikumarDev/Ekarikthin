@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
 import "./Layout.css";
 import Footer from "./Footer";
 import { UserContext } from "../../Context/UserContext";
@@ -11,6 +13,8 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
   const navigate = useNavigate();
 
   const { user, setUser } = useContext(UserContext);
+
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleLogout = async () => {
     const { data } = await axios.get("/api/admin/logout");
@@ -41,6 +45,12 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
           </NavLink>
 
           <div className="navLinks">
+            <div
+              className="hamburgerMenu"
+              onClick={() => setShowMenu(!showMenu)}
+            >
+              {showMenu ? <ImCross /> : <GiHamburgerMenu />}
+            </div>
             <NavLink to="/events">EVENTS</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/organisers">ORGANISERS</NavLink>
@@ -56,6 +66,30 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
             <NavLink className="navRegister" to="/registration">
               REGISTER
             </NavLink>
+          </div>
+
+          <div className={showMenu ? "mob-cont" : "hidden"}>
+            <div
+              className="mob-nav-links"
+              onClick={() => setShowMenu(!showMenu)}
+            >
+              <NavLink to="/">HOME</NavLink>
+              <NavLink to="/events">EVENTS</NavLink>
+              <NavLink to="/gallery">GALLERY</NavLink>
+              <NavLink to="/organisers">ORGANISERS</NavLink>
+              <NavLink to="/about">ABOUT</NavLink>
+              {user && (
+                <>
+                  <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
+                  <NavLink onClick={handleLogout} to="/">
+                    LOGOUT
+                  </NavLink>
+                </>
+              )}
+              <NavLink className="navRegister" to="/registration">
+                REGISTER
+              </NavLink>
+            </div>
           </div>
         </nav>
       </header>

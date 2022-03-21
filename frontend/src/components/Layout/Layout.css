@@ -1,3 +1,8 @@
+:root {
+  --nav-bg-color: #063292;
+  --nav-txt-color: white;
+}
+
 .container {
   height: 100vh;
   display: grid;
@@ -8,7 +13,7 @@
 .header {
   border-bottom: 1px solid #ccc;
   box-shadow: 0 1px 8px 2px #ccc;
-  background-color: white;
+  background-color: var(--nav-bg-color);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -37,7 +42,8 @@ nav {
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity));
+  /* color: rgb(71 85 105 / var(--tw-text-opacity)); */
+  color: var(--nav-txt-color);
   margin-right: 1rem;
   display: flex;
 }
@@ -46,21 +52,75 @@ nav {
   margin-right: 1.25rem;
 }
 
-.navLinks > *:hover {
-  color: orangered;
+.navLinks > *:hover,
+.mob-nav-links > *:hover {
+  color: rgb(186, 186, 250);
 }
 
 .navRegister {
-  color: red;
-}
-
-@media only screen and (max-width: 768px) {
-  .navLinks {
-    display: none;
-  }
+  color: yellow;
 }
 
 .footer {
   text-align: center;
   font-size: 0.75rem;
+}
+
+.hamburgerMenu {
+  display: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+}
+.mob-cont {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hamberger Menu */
+@media only screen and (max-width: 768px) {
+  .navLinks > * {
+    display: none;
+  }
+
+  .hamburgerMenu {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5em;
+    position: absolute;
+    right: 8px;
+  }
+
+  .mob-cont {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 3.7em;
+    left: 0;
+    background-color: #063292;
+    padding: 1em 0;
+  }
+
+  .mob-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--nav-txt-color);
+  }
+
+  .mob-nav-links > * {
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    opacity: 1;
+  }
 }

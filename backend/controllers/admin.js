@@ -119,6 +119,13 @@ exports.updatePay = async (req, res) => {
       });
     }
 
+    if (details.paid) {
+      return res.status(400).json({
+        success: false,
+        message: "Already paid for the token",
+      });
+    }
+
     details.paid = true;
     await details.save();
 
