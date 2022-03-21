@@ -1,0 +1,67 @@
+.admCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.admLogin {
+  box-shadow: 0 1px 8px 2px rgb(184, 179, 179);
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  width: 20em;
+}
+
+.admForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .admLogin {
+    position: absolute;
+    top: 16em;
+  }
+}
+
+.admForm > form {
+  width: 90%;
+}
+
+.admForm > form > * {
+  margin-top: 1.3em;
+}
+
+.regCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid blue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1em;
+}
+
+.regDetails > * {
+  margin-top: 10px;
+  font-size: 1.4em;
+}
+
+.regDetails > h3 {
+  margin-top: 0;
+}
+
+.updatePay {
+  margin: 1em;
+}
+
+.highLight {
+  font: bold;
+}

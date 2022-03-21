@@ -1,9 +1,29 @@
-import React from "react";
-import "./Layout.css";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./Layout.css";
+import Footer from "./Footer";
+import { UserContext } from "../../Context/UserContext";
+import { notifyError, notifySuccess } from "../../utils/Notification";
 
 export default function Layout({ children, title = "Ekarikthin'22" }) {
+  const navigate = useNavigate();
+
+  const { user, setUser } = useContext(UserContext);
+
+  const handleLogout = async () => {
+    const { data } = await axios.get("/api/admin/logout");
+    if (data.success) {
+      localStorage.removeItem("user");
+      setUser(null);
+      notifySuccess("Logged out succesfully");
+      navigate("/");
+    } else {
+      notifyError("Something went wrong. Please try again");
+    }
+  };
+
   return (
     <div className="container">
       <Helmet>
@@ -25,6 +45,14 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/organisers">ORGANISERS</NavLink>
             <NavLink to="/about">ABOUT</NavLink>
+            {user && (
+              <>
+                <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
+                <NavLink onClick={handleLogout} to="/">
+                  LOGOUT
+                </NavLink>
+              </>
+            )}
             <NavLink className="navRegister" to="/registration">
               REGISTER
             </NavLink>
@@ -35,7 +63,9 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
       {/* CONTENT */}
       <main>{children}</main>
 
-      <footer>FOOTER</footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
