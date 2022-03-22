@@ -39,7 +39,7 @@ export default function Login() {
         notifyError("Something went wrong. Please try again");
       }
     } catch (err) {
-      err.response && notifyError(err.response);
+      err.response && notifyError(err.response.data.message);
     }
   };
 

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 92vh;
   padding: 0;
   margin: 0;
 }
@@ -26,7 +26,7 @@
 @media only screen and (max-width: 768px) {
   .admLogin {
     position: absolute;
-    top: 16em;
+    top: 40%;
   }
 }
 
