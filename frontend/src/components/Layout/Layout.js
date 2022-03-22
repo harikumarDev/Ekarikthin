@@ -58,6 +58,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
             {user && (
               <>
                 <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
+                <NavLink to="/admin/allregistrations">ALL REGS</NavLink>
                 <NavLink onClick={handleLogout} to="/">
                   LOGOUT
                 </NavLink>
@@ -81,6 +82,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
               {user && (
                 <>
                   <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
+                  <NavLink to="/admin/allregistrations">ALL REGS</NavLink>
                   <NavLink onClick={handleLogout} to="/">
                     LOGOUT
                   </NavLink>

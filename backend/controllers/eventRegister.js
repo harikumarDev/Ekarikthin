@@ -50,27 +50,27 @@ exports.eventRegister = async (req, res) => {
       email
     );
 
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.log("====================================");
-        console.log("MSG SENDING ERR:: ", err);
-        console.log("====================================");
-        return res.status(500).json({
-          success: false,
-          code: "MAIL_ERROR",
-          message: "Error in sending mail",
-        });
-      } else if (info.rejected.length > 0) {
-        console.log("====================================");
-        console.log("MSG SENDING REJECTED:: ", info.rejected);
-        console.log("====================================");
-        return res.status(500).json({
-          success: false,
-          code: "MAIL_ERROR",
-          message: "Error in sending mail",
-        });
-      }
-    });
+    // transporter.sendMail(mailOptions, (err, info) => {
+    //   if (err) {
+    //     console.log("====================================");
+    //     console.log("MSG SENDING ERR:: ", err);
+    //     console.log("====================================");
+    //     return res.status(500).json({
+    //       success: false,
+    //       code: "MAIL_ERROR",
+    //       message: "Error in sending mail",
+    //     });
+    //   } else if (info.rejected.length > 0) {
+    //     console.log("====================================");
+    //     console.log("MSG SENDING REJECTED:: ", info.rejected);
+    //     console.log("====================================");
+    //     return res.status(500).json({
+    //       success: false,
+    //       code: "MAIL_ERROR",
+    //       message: "Error in sending mail",
+    //     });
+    //   }
+    // });
 
     res.status(201).json({
       success: true,

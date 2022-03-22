@@ -14,6 +14,7 @@ import Gallery from "./components/Gallery/Gallery";
 import Organisers from "./components/Organisers/Organisers";
 import Login from "./components/Admin/Login";
 import VerifyToken from "./components/Admin/VerifyToken";
+import AllRegistrations from "./components/Admin/AllRegistrations";
 
 function App() {
   const [user, setUser] = useState(
@@ -38,6 +39,10 @@ function App() {
               <Route path="about" element={<About />} />
               <Route path="/admin/login" element={<Login />} />
               <Route path="/admin/verify" element={<VerifyToken />} />
+              <Route
+                path="/admin/allregistrations"
+                element={<AllRegistrations />}
+              />
             </Routes>
           </Layout>
         </UserContext.Provider>

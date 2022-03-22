@@ -7,3 +7,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.main-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-cont > h1 {
+  margin: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-card-cont {
+    max-width: 70%;
+  }
+}

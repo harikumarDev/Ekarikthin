@@ -1,13 +1,4 @@
-.org-cont {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
 
-.org-cont > h1 {
-  margin: 16px;
-}
 
 .underline-ek {
   background: linear-gradient(to left, #e40707, #d39f1c 100%);
@@ -16,7 +7,7 @@
   background-repeat: repeat-x;
 }
 
-.org-card-cont {
+.main-card-cont {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -42,10 +33,6 @@
 @media only screen and (max-width: 768px) {
   .our-team {
     width: 26.7em;
-  }
-
-  .org-card-cont {
-    max-width: 70%;
   }
 }
 

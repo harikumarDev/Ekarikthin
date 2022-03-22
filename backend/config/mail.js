@@ -15,6 +15,7 @@ let transporter = nodemailer.createTransport({
     accessToken: process.env.GMAIL_ACCESS_TOKEN,
     expires: 3599,
   },
+  from: process.env.GMAIL_USERNAME,
 });
 
 const mailOptionsFunc = (
@@ -27,7 +28,7 @@ const mailOptionsFunc = (
   email
 ) => {
   return {
-    from: process.env.FROM_EMAIL,
+    from: `Ekarikthin - NITN <${process.env.GMAIL_USERNAME}>`,
     to: email,
     subject: "Ekarikthin'22 Registration",
     html: `<h1>Thank you for registering for Ekarikthin'22</h1>

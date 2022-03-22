@@ -65,3 +65,37 @@
 .highLight {
   font: bold;
 }
+
+/* All Registrations */
+.details-card {
+  padding-top: 0;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  box-shadow: 0 1px 8px 2px rgb(184, 179, 179);
+  /* text-align: center; */
+  overflow: hidden;
+  position: relative;
+  width: 21em;
+  height: 20em;
+  border-radius: 10px;
+}
+
+.details-head {
+  padding: 15px 0;
+}
+
+.details-head > h2 {
+  color: purple;
+}
+
+.details-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details > * {
+  margin-top: 12px;
+  font-size: 1.2em;
+}

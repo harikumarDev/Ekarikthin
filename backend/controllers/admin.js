@@ -140,3 +140,18 @@ exports.updatePay = async (req, res) => {
     });
   }
 };
+
+exports.getAllRegistrations = async (req, res) => {
+  try {
+    const allRegs = await eventReg.find({});
+    res.status(200).json({
+      success: true,
+      allRegs,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+    });
+  }
+};

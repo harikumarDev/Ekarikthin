@@ -65,11 +65,11 @@ function OrgCard({ org, ind }) {
 }
 export default function Organisers() {
   return (
-    <div className="org-cont">
+    <div className="main-cont">
       <h1>
         ORGANISERS OF <span className="underline-ek">EKARITKTHIN'22</span>
       </h1>
-      <div className="org-card-cont">
+      <div className="main-card-cont">
         {organisers.map((org, ind) => (
           <OrgCard key={ind} org={org} ind={ind} />
         ))}
