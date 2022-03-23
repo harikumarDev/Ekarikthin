@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 import { UserContext } from "../../Context/UserContext";
@@ -13,6 +13,7 @@ export default function VerifyToken() {
   const { user } = useContext(UserContext);
   const [regDetails, setRegDetails] = useState();
   const [token, setToken] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     if (!user) {
@@ -23,6 +24,7 @@ export default function VerifyToken() {
 
   const getDetails = async (e) => {
     e.preventDefault();
+    setDisabled(true);
     try {
       const { data } = await axios.get(`/api/admin/details?tokenId=${token}`, {
         headers: {
@@ -35,16 +37,19 @@ export default function VerifyToken() {
       } else {
         notifyError("Invalid token");
       }
+      setDisabled(false);
     } catch (err) {
       if (err.response && err.response.data.code === "INVALID_TOKEN") {
         notifyError("Invalid token");
       } else {
         notifyError("Something went wrong. Please try again later");
       }
+      setDisabled(false);
     }
   };
 
   const updatePay = async (token) => {
+    setDisabled(true);
     try {
       const { data } = await axios.get(`/api/admin/pay?tokenId=${token}`, {
         headers: {
@@ -60,8 +65,10 @@ export default function VerifyToken() {
       } else {
         notifyError("Something went wrong. Please try again later");
       }
+      setDisabled(false);
     } catch (err) {
       notifyError("Something went wrong. Please try again later");
+      setDisabled(false);
     }
   };
 
@@ -88,8 +95,13 @@ export default function VerifyToken() {
                       updatePay(regDetails.tokenId);
                     }
                   }}
+                  disabled={disabled}
                 >
-                  Mark as paid
+                  {disabled ? (
+                    <CircularProgress size={25} color="secondary" />
+                  ) : (
+                    <>Mark as paid</>
+                  )}
                 </Button>
               </div>
             )}
@@ -122,8 +134,17 @@ export default function VerifyToken() {
               onChange={(e) => setToken(e.target.value)}
             />
             <div className="regSub">
-              <Button type="submit" variant="contained" color="secondary">
-                Get Details
+              <Button
+                type="submit"
+                variant="contained"
+                color="secondary"
+                disabled={disabled}
+              >
+                {disabled ? (
+                  <CircularProgress size={25} color="secondary" />
+                ) : (
+                  <>Get Details</>
+                )}
               </Button>
             </div>
           </form>
