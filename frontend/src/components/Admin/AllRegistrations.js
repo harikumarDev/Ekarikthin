@@ -1,11 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { CircularProgress } from "@mui/material";
+import {
+  CircularProgress,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError } from "../../utils/Notification";
+import { indEvenCodes } from "../../utils/Events";
 
 const animation = (delay) => ({
   visible: {
@@ -80,6 +87,8 @@ export default function AllRegistrations() {
   const { user } = useContext(UserContext);
 
   const [allRegis, setAllRegis] = useState(null);
+  const [eventCode, setEventCode] = useState("all");
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     if (!user) {
@@ -98,6 +107,7 @@ export default function AllRegistrations() {
           },
         });
         setAllRegis(data.allRegs);
+        setData(data.allRegs);
       } catch (err) {
         notifyError("Something went wrong. Please try again");
       }
@@ -106,14 +116,52 @@ export default function AllRegistrations() {
     getData();
   }, [user.token]);
 
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setEventCode(value);
+
+    if (value === "all") {
+      setAllRegis(data);
+    } else {
+      setAllRegis(data.filter((reg) => reg.eventCode === value));
+    }
+  };
+
   return (
     <div className="main-cont">
-      <h1>All Registrations</h1>
+      <div className="allreg-head">
+        <div>
+          <h1>All Registrations</h1>
+        </div>
+        <div className="filter-reg">
+          <FormControl fullWidth>
+            <InputLabel id="event-label">Event Code</InputLabel>
+            <Select
+              labelId="event-label"
+              value={eventCode}
+              label="Event Code"
+              name="eventCode"
+              onChange={handleChange}
+            >
+              <MenuItem value="all">All</MenuItem>
+              {indEvenCodes.map((code, ind) => (
+                <MenuItem key={ind} value={code}>
+                  {code}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+      </div>
       <div className="main-card-cont">
         {allRegis ? (
-          allRegis.map((reg, ind) => (
-            <DetailsCard key={ind} reg={reg} ind={ind} />
-          ))
+          allRegis.length > 0 ? (
+            allRegis.map((reg, ind) => (
+              <DetailsCard key={ind} reg={reg} ind={ind} />
+            ))
+          ) : (
+            <h3>No Registrations</h3>
+          )
         ) : (
           <CircularProgress color="secondary" />
         )}

@@ -112,3 +112,14 @@ export const eventCost = {
   SPR1: 150,
   SPR2: 240,
 };
+
+export const indEvenCodes = [
+  "CUL1",
+  "CUL2",
+  "TEC1",
+  "TEC2",
+  "ESP1",
+  "ESP2",
+  "SPR1",
+  "SPR2",
+];

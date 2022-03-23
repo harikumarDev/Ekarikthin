@@ -67,6 +67,36 @@
 }
 
 /* All Registrations */
+.allreg-head {
+  display: flex;
+  margin: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+}
+
+.filter-reg {
+  height: 4%;
+  min-width: 8%;
+  position: absolute;
+  right: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+  .allreg-head {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .allreg-head > div > h1 {
+    padding-left: 16px;
+  }
+
+  .filter-reg {
+    min-width: 25%;
+  }
+}
+
 .details-card {
   padding-top: 0;
   padding-bottom: 30px;

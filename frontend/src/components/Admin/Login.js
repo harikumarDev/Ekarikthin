@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, CircularProgress } from "@mui/material";
 import { UserContext } from "../../Context/UserContext";
 import "./Admin.css";
 import { notifyError, notifySuccess } from "../../utils/Notification";
@@ -12,6 +12,7 @@ export default function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -21,6 +22,7 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setDisabled(true);
     try {
       const { data } = await axios.post("/api/admin/login", {
         username,
@@ -38,8 +40,10 @@ export default function Login() {
       } else {
         notifyError("Something went wrong. Please try again");
       }
+      setDisabled(false);
     } catch (err) {
       err.response && notifyError(err.response.data.message);
+      setDisabled(false);
     }
   };
 
@@ -68,8 +72,17 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button variant="contained" color="secondary" type="submit">
-              Login
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              disabled={disabled}
+            >
+              {disabled ? (
+                <CircularProgress size={25} color="secondary" />
+              ) : (
+                <>Login</>
+              )}
             </Button>
           </form>
         </div>

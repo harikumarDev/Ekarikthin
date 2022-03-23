@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
@@ -11,10 +11,12 @@ import { notifyError, notifySuccess } from "../../utils/Notification";
 
 export default function Layout({ children, title = "Ekarikthin'22" }) {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const { user, setUser } = useContext(UserContext);
 
   const [showMenu, setShowMenu] = useState(false);
+  const [pTitle, setTitle] = useState(title);
 
   const handleLogout = async () => {
     const { data } = await axios.get("/api/admin/logout");
@@ -28,10 +30,24 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    const arr = pathname.split("/");
+    if (arr[1] !== "") {
+      setTitle("Ekarikthin'22 - " + arr[1].toUpperCase());
+    } else {
+      setTitle(title);
+    }
+  }, [pathname, title]);
+
   return (
     <div className="container">
       <Helmet>
-        <title>{title}</title>
+        <title>{pTitle}</title>
         <meta name="description" content="NITN Techno-Cultural fest" />
       </Helmet>
 
