@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/index",
     "dev": "SET NODE_ENV=DEVELOPMENT & nodemon backend/index",
-    "prod": "SET NODE_ENV=PRODUCTION & nodemon backend/index"
+    "prod": "SET NODE_ENV=PRODUCTION & nodemon backend/index",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
