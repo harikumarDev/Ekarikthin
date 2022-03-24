@@ -4,15 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Organisers.css";
 import { organisers } from "../../utils/Data";
-
-const animation = (delay) => ({
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 + delay / 10 < 0.8 ? 0.5 + delay / 10 : 0.8 },
-  },
-  hidden: { opacity: 0.1, y: 100 },
-});
+import { animation } from "../../utils/Animation";
 
 function OrgCard({ org, ind }) {
   const controls = useAnimation();

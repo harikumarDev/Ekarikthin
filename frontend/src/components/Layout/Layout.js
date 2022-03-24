@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ImCross } from "react-icons/im";
+import { AiOutlineClose } from "react-icons/ai";
 import "./Layout.css";
 import Footer from "./Footer";
 import { UserContext } from "../../Context/UserContext";
@@ -65,7 +65,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
               className="hamburgerMenu"
               onClick={() => setShowMenu(!showMenu)}
             >
-              {showMenu ? <ImCross /> : <GiHamburgerMenu />}
+              {showMenu ? <AiOutlineClose /> : <GiHamburgerMenu />}
             </div>
             <NavLink to="/events">EVENTS</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>

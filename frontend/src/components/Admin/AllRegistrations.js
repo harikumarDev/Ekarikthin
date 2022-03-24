@@ -13,15 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError } from "../../utils/Notification";
 import { indEvenCodes } from "../../utils/Events";
-
-const animation = (delay) => ({
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 + delay / 10 < 0.8 ? 0.5 + delay / 10 : 0.65 },
-  },
-  hidden: { opacity: 0.2, y: 100 },
-});
+import { animation } from "../../utils/Animation";
 
 function DetailsCard({ reg, ind }) {
   const controls = useAnimation();
