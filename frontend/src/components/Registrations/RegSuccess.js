@@ -5,7 +5,9 @@ import {
   Link,
   useSearchParams,
 } from "react-router-dom";
-import Main from "./Main";
+import { CircularProgress } from "@mui/material";
+// import Main from "./Main";
+import Main from "./BgDesign/Main";
 import "./Registrations.css";
 import { notifyError } from "../../utils/Notification";
 
@@ -15,6 +17,7 @@ export default function RegSuccess() {
 
   const [searchParams] = useSearchParams();
   const [details, setDetails] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const ac = new AbortController();
@@ -38,7 +41,7 @@ export default function RegSuccess() {
         });
       }
     };
-
+    setLoading(true);
     fetchQuery(signal)
       .then((resp) => resp.json())
       .then((resp) => {
@@ -52,6 +55,9 @@ export default function RegSuccess() {
       .catch(() => {
         notifyError("Server error. Please try again later");
         navigate("/registration");
+      })
+      .finally(() => {
+        setLoading(false);
       });
 
     return () => {
@@ -65,7 +71,15 @@ export default function RegSuccess() {
         <p>You will receive an Email with your registration details.</p>
         {details && (
           <h2 className="reg-token">
-            Token: <span> {details.tokenId}</span>
+            Token:{" "}
+            <span>
+              {" "}
+              {loading ? (
+                <CircularProgress size={25} color="secondary" />
+              ) : (
+                details.tokenId
+              )}
+            </span>
           </h2>
         )}
         <Link

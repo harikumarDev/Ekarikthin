@@ -70,7 +70,6 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
             <NavLink to="/events">EVENTS</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/organisers">ORGANISERS</NavLink>
-            <NavLink to="/about">ABOUT</NavLink>
             {user && (
               <>
                 <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
@@ -94,7 +93,6 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
               <NavLink to="/events">EVENTS</NavLink>
               <NavLink to="/gallery">GALLERY</NavLink>
               <NavLink to="/organisers">ORGANISERS</NavLink>
-              <NavLink to="/about">ABOUT</NavLink>
               {user && (
                 <>
                   <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>

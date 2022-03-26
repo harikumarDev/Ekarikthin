@@ -1,6 +1,6 @@
 :root {
-  --nav-bg-color: #063292;
-  --nav-txt-color: white;
+  --nav-bg-color: transparent;
+  --nav-txt-color: orangered;
 }
 
 .container {
@@ -54,11 +54,11 @@ nav {
 
 .navLinks > *:hover,
 .mob-nav-links > *:hover {
-  color: rgb(186, 186, 250);
+  color: rgb(53, 53, 236);
 }
 
 .navRegister {
-  color: yellow;
+  color: red;
 }
 
 .footer {
@@ -74,6 +74,7 @@ nav {
   -khtml-user-select: none;
   -ms-user-select: none;
 }
+
 .mob-cont {
   display: none;
 }

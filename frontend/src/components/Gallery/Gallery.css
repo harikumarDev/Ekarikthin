@@ -4,13 +4,13 @@
 }
 
 .gallery {
-  column-count: 3;
-  column-width: 33%;
+  column-count: 4;
+  column-width: 25%;
   padding: 0 12px;
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -webkit-column-width: 25%;
+  -moz-column-width: 25%;
 }
 
 .gallery .pics {
@@ -23,6 +23,14 @@
 
 .gallery .pics:hover {
   filter: opacity(0.8);
+}
+
+@media (max-width: 1440px) {
+  .gallery {
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+  }
 }
 
 @media (max-width: 991px) {

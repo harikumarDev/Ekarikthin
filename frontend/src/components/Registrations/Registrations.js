@@ -18,7 +18,8 @@ import {
   notifyInfo,
   notifySuccess,
 } from "../../utils/Notification";
-import Main from "./Main";
+// import Main from "./Main";
+import Main from "./BgDesign/Main";
 
 const loadScript = (src) => {
   return new Promise((resolve) => {

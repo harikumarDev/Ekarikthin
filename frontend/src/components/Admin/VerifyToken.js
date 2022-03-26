@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 import { UserContext } from "../../Context/UserContext";
 import "./Admin.css";
-import Main from "../Registrations/Main";
+// import Main from "../Registrations/Main";
+import Main from "../Registrations/BgDesign/Main";
 import axios from "axios";
 
 export default function VerifyToken() {
@@ -86,7 +87,7 @@ export default function VerifyToken() {
               <p>Payment Mode: {regDetails.paymentMode}</p>
             </div>
             {!regDetails.paid && (
-              <div className="updatePay">
+              <div>
                 <Button
                   variant="contained"
                   color="secondary"

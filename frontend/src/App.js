@@ -7,7 +7,6 @@ import { UserContext } from "./Context/UserContext";
 import Home from "./components/Home/Home";
 import Events from "./components/Events/Events";
 import Registrations from "./components/Registrations/Registrations";
-import About from "./components/About/About";
 import Layout from "./components/Layout/Layout";
 import RegSuccess from "./components/Registrations/RegSuccess";
 import Gallery from "./components/Gallery/Gallery";
@@ -36,7 +35,6 @@ function App() {
               <Route path="organisers" element={<Organisers />} />
               <Route path="registration" element={<Registrations />} />
               <Route path="registration/:id" element={<RegSuccess />} />
-              <Route path="about" element={<About />} />
               <Route path="/admin/login" element={<Login />} />
               <Route path="/admin/verify" element={<VerifyToken />} />
               <Route
