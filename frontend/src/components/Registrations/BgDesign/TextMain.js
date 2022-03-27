@@ -21,7 +21,7 @@ const Container = styled.div`
     font-weight: 900;
     color: #343434;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1130px) {
       display: none;
     }
   }

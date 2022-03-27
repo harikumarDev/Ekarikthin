@@ -37,7 +37,12 @@ export const data = [
   {
     id: 1,
     title: "Gallery 1",
-    src: "https://qphs.fs.quoracdn.net/main-qimg-9444663478bfe37083e28c2be9498431-lq",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/87041361_2207966296177399_3062611500830031872_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=e3f864&_nc_ohc=hoyrdh1FeJ0AX8UEcd_&_nc_ht=scontent.fdel29-1.fna&oh=00_AT9L-hZuAJYs9MCrjTd_DHQke42GvZkBP3O_-Lyf78GxFQ&oe=62634334",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/87034499_2207481549559207_347221876516323328_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=9267fe&_nc_ohc=j6m17DQb59kAX-e3m9I&_nc_ht=scontent.fdel29-1.fna&oh=00_AT_IJiilbfpFJqCLZ6rMoYQeUNFNOOx549kUvyCdod4ORw&oe=626334B3",
   },
   {
     id: 1,
@@ -62,6 +67,31 @@ export const data = [
   {
     id: 1,
     title: "Gallery 1",
+    src: "https://qphs.fs.quoracdn.net/main-qimg-9444663478bfe37083e28c2be9498431-lq",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
     src: "https://qphs.fs.quoracdn.net/main-qimg-b3ecd3c1d8d983eb3e1c4e7e38ce3bc3.webp",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/89299470_2219345975039431_6084581285211144192_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=a26aad&_nc_ohc=s_LaauwFMtUAX-VBWsE&_nc_ht=scontent.fdel29-1.fna&oh=00_AT8Td6sjqYDUZ0mJvDkONxBw55bMk97u2jGIHeX_x4FlNA&oe=6263AE7E",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/88240652_2217938048513557_7442226464725925888_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=SkQyxwGI4JAAX-D1d9T&_nc_ht=scontent.fdel29-1.fna&oh=00_AT-wdIxBgSFydLPJ--1OZEYWnQQDGulH8XQujUkIzrAabg&oe=62643644",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/87104310_2207967452843950_2751575020135251968_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=e3f864&_nc_ohc=b5DEXbYxKB0AX_gujlG&_nc_ht=scontent.fdel29-1.fna&oh=00_AT9iCoDiy7rRuYTcH-c2oW7G9d2_hFIki6fOyPFjXrZ6aA&oe=62635735",
+  },
+  {
+    id: 1,
+    title: "Gallery 1",
+    src: "https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/89554014_2219346008372761_429941718276636672_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=a26aad&_nc_ohc=pXx7wlEeBn0AX92pT07&_nc_ht=scontent.fdel29-1.fna&oh=00_AT-ZUF2QZLZiUCoAyX-bWYzoaGQYkMHNamVlHkOPYWylHQ&oe=6263F8C1",
   },
 ];

@@ -57,7 +57,7 @@ function OrgCard({ org, ind }) {
 }
 export default function Organisers() {
   return (
-    <div className="main-cont">
+    <div className="main-cont organisers-bg">
       <h1>
         ORGANISERS OF <span className="underline-ek">EKARITKTHIN'22</span>
       </h1>

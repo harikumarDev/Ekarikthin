@@ -5,6 +5,10 @@
   background-repeat: repeat-x;
 }
 
+.organisers-bg {
+  background-color: #eff5fc;
+}
+
 .main-card-cont {
   display: flex;
   flex-wrap: wrap;

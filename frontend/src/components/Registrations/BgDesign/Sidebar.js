@@ -7,9 +7,9 @@ export default function Sidebar({ children, title = "Register" }) {
     <Container>
       <LogoWrapper>
         {/* <img src="/title.png" alt="Ekarikthin" /> */}
-        {/* <h3>
+        <h3>
           Ekarikthin'<span>22</span>
-        </h3> */}
+        </h3>
       </LogoWrapper>
       <Content>
         <h3>{title}</h3>
@@ -76,7 +76,7 @@ const LogoWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  min-width: 500px;
+  min-width: 30em;
   backdrop-filter: blur(35px);
   background-color: rgba(255, 255, 255, 0.8);
   height: 100%;
@@ -86,8 +86,7 @@ const Container = styled.div`
   align-items: center;
   padding: 0 2rem;
 
-  @media (max-width: 900px) {
-    width: 100vw;
+  @media (max-width: 1130px) {
     position: absolute;
     padding: 0;
   }

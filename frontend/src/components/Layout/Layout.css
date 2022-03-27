@@ -103,8 +103,10 @@ nav {
     width: 100%;
     top: 3.7em;
     left: 0;
-    background-color: #063292;
+    background-color: white;
+    z-index: 99;
     padding: 1em 0;
+    border-bottom: 1px solid #ccc;
   }
 
   .mob-nav-links {

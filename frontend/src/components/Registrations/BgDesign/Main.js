@@ -21,11 +21,7 @@ export default function Main({
 
 const Container = styled.div`
   background: #eefcff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  height: 95vh;
 `;
 
 const Wrapper = styled.div`

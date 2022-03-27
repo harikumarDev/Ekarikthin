@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { animation } from "../../utils/Animation";
 import { data } from "../../utils/Images";
+import { CircularProgress } from "@mui/material";
 
 function ImageComp({ item, ind }) {
   const controls = useAnimation();
@@ -31,11 +32,20 @@ function ImageComp({ item, ind }) {
 export default function Gallery() {
   const [model, setModel] = useState(false);
   const [image, setImage] = useState({});
+  const [images, setImages] = useState(null);
 
   const getImg = (img) => {
     setImage(img);
     setModel(true);
   };
+
+  useEffect(() => {
+    for (let i = data.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [data[i], data[j]] = [data[j], data[i]];
+    }
+    setImages(data);
+  }, []);
 
   return (
     <div className="gallery-main">
@@ -48,11 +58,17 @@ export default function Gallery() {
         />
       </div>
       <div className="gallery">
-        {data.map((item, ind) => (
-          <div key={ind} className="pics" onClick={() => getImg(item)}>
-            <ImageComp item={item} ind={ind} />
-          </div>
-        ))}
+        {images ? (
+          <>
+            {images.map((item, ind) => (
+              <div key={ind} className="pics" onClick={() => getImg(item)}>
+                <ImageComp item={item} ind={ind} />
+              </div>
+            ))}
+          </>
+        ) : (
+          <CircularProgress size={25} color="secondary" />
+        )}
       </div>
     </div>
   );
