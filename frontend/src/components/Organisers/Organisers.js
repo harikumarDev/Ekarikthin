@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AiFillFacebook, AiFillPhone, AiFillInstagram } from "react-icons/ai";
+import { AiFillPhone, AiFillInstagram, AiFillMail } from "react-icons/ai";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Organisers.css";
@@ -25,29 +25,25 @@ function OrgCard({ org, ind }) {
       variants={animation(ind)}
     >
       <div className="picture">
-        <img
-          className="img-fluid"
-          alt={org.name}
-          src="https://picsum.photos/130/130?image=1027"
-        />
+        <img className="img-fluid" alt={org.name} src={org.image} />
       </div>
       <div className="team-content">
         <h3 className="name">{org.name}</h3>
-        <h4 className="title">Web Developer</h4>
+        <h4 className="title">{org.title}</h4>
       </div>
       <ul className="social">
         <li>
-          <a href="https://codepen.io/collection/XdWJOQ/">
-            <AiFillFacebook style={{ fontSize: "1.6em" }} />
+          <a target="_blank" rel="noreferrer" href={`mailto:${org.email}`}>
+            <AiFillMail style={{ fontSize: "1.6em" }} />
           </a>
         </li>
         <li>
-          <a href="https://codepen.io/collection/XdWJOQ/">
+          <a target="_blank" rel="noreferrer" href={`tel:${org.phone}`}>
             <AiFillPhone style={{ fontSize: "1.6em" }} />
           </a>
         </li>
         <li>
-          <a href="https://codepen.io/collection/XdWJOQ/">
+          <a target="_blank" rel="noreferrer" href={org.insta}>
             <AiFillInstagram style={{ fontSize: "1.6em" }} />
           </a>
         </li>

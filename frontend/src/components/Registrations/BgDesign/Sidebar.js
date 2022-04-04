@@ -6,7 +6,7 @@ export default function Sidebar({ children, title = "Register" }) {
   return (
     <Container>
       <LogoWrapper>
-        {/* <img src="/title.png" alt="Ekarikthin" /> */}
+        <img src="/logo.png" alt="Ekarikthin" />
         <h3>
           Ekarikthin'<span>22</span>
         </h3>
@@ -58,18 +58,20 @@ const MainForm = styled.div`
 `;
 
 const LogoWrapper = styled.div`
+  text-align: center;
+
   img {
     height: 4rem;
   }
 
   h3 {
-    color: #ff8d8d;
+    color: #e07f00;
     text-align: center;
     font-size: 22px;
   }
 
   span {
-    color: #5dc399;
+    color: black;
     font-weight: 300;
     font-size: 18px;
   }

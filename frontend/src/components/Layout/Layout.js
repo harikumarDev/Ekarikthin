@@ -56,7 +56,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
           <NavLink to="/">
             {/* LOGO */}
             <div className="logoNav">
-              <img src="/title.png" alt="ekarikthin" height="45px" />
+              <img src="/logo.png" alt="Ekarikthin'22" height="50px" />
             </div>
           </NavLink>
 

@@ -1,5 +1,5 @@
 :root {
-  --nav-bg-color: transparent;
+  --nav-bg-color: rgb(230, 230, 253);
   --nav-txt-color: orangered;
 }
 
@@ -32,7 +32,6 @@ nav {
 .logoNav {
   cursor: pointer;
   align-items: center;
-  padding-left: 0.5rem;
   position: absolute;
   top: 5px;
   border-radius: 10px;

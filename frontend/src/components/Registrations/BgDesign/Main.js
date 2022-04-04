@@ -7,7 +7,7 @@ import TextMain from "./TextMain";
 export default function Main({
   children,
   title,
-  textMain = "NITN WELCOMES YOU",
+  textMain = "NITN Welcomes You",
 }) {
   return (
     <Container>
