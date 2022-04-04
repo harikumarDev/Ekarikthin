@@ -1,0 +1,96 @@
+.glass h1 {
+  color: #426696;
+  font-weight: 600;
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.glass h2,
+.glass p {
+  color: #658ec6;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.glass h3 {
+  color: #426696;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.glass {
+  display: flex;
+  background: white;
+  min-height: 80vh;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 5;
+  backdrop-filter: blur(2rem);
+}
+
+.eve-dashboard {
+  overflow: hidden;
+}
+
+.eve-dashboard > img {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  max-width: 100%;
+}
+
+.eve-details {
+  width: 45%;
+}
+
+/* eve-details */
+.eve-details {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eve-card {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 2rem 0rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: space-between;
+}
+
+.eve-card.terms {
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .glass {
+    display: block;
+    flex-direction: column;
+  }
+
+  .eve-details {
+    width: 90%;
+  }
+
+  .eve-dashboard > img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .eve-details {
+    display: block;
+    text-align: center;
+    padding-bottom: .15em;
+  }
+}

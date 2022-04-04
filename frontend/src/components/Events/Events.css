@@ -1,0 +1,63 @@
+.eve-cont {
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.eve-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .eve-head {
+    flex-direction: column;
+  }
+
+  .eve-head > h1 {
+    margin-bottom: 0.3em;
+  }
+}
+
+.eve-filter {
+  margin: 1em 0;
+}
+
+.eve-card-cont {
+  display: flex;
+  margin-top: 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+  flex-wrap: wrap;
+}
+
+/* Filter */
+.filter-cont button {
+  margin-right: 2rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: rgb(65, 98, 168);
+  border-radius: 1rem;
+  border: 2px solid rgb(65, 98, 168);
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.filter-cont > button.active {
+  background: rgb(65, 98, 168);
+  color: white;
+}
+
+.filter-cont button:hover {
+  background-color: rgb(81, 98, 248);
+  color: white;
+  border: 2px solid rgb(81, 98, 248);
+}

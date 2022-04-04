@@ -112,3 +112,141 @@ export const organisers = [
     insta: "https://www.instagram.com/srijan.iitrpr/",
   },
 ];
+
+const DAY1 = "4th May";
+const DAY2 = "5th May";
+
+export const allEvents = [
+  {
+    title: "Frontend design",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    time: "10:00 AM",
+    venue: "Bamboo Clasroom - 2",
+    day: 1,
+  },
+  {
+    title: "Backend development",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1647937534872-941667736d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    time: "12:00 AM",
+    venue: "Bamboo Clasroom - 2",
+    day: 1,
+  },
+  {
+    title: "Cosplay - Solo",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY2,
+    time: "2:00 PM",
+    venue: "Bamboo Clasroom - 2",
+    day: 2,
+  },
+  {
+    title: "Frontend design",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    time: "10:00 AM",
+    venue: "Bamboo Clasroom - 2",
+    day: 1,
+  },
+  {
+    title: "Backend development",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1564686093817-aba3d4919dc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY2,
+    time: "12:00 AM",
+    venue: "Bamboo Clasroom - 2",
+    day: 2,
+  },
+  {
+    title: "Cosplay - Solo",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY2,
+    time: "2:00 PM",
+    day: 2,
+    venue: "Bamboo Clasroom - 2",
+  },
+  {
+    title: "Frontend design",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    time: "10:00 AM",
+    venue: "Bamboo Clasroom - 2",
+    day: 1,
+  },
+  {
+    title: "Backend development",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    day: 1,
+    time: "12:00 AM",
+    venue: "Bamboo Clasroom - 2",
+  },
+  {
+    title: "Cosplay - Solo",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    day: 2,
+    date: DAY2,
+    time: "2:00 PM",
+    venue: "Bamboo Clasroom - 2",
+  },
+  {
+    title: "Ritzy",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    day: 2,
+    date: DAY2,
+    time: "10:00 AM",
+    venue: "Bamboo Clasroom - 2",
+  },
+  {
+    title: "Cosplay - Group",
+    category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    day: 1,
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY1,
+    time: "11:00 AM",
+    venue: "Bamboo Clasroom - 2",
+  },
+  {
+    title: "Mud Race",
+    category: "Technical",
+    image:
+      "https://images.unsplash.com/photo-1648688356431-00e58d0149fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80",
+    description: "Frontend templates design using HTML and CSS",
+    date: DAY2,
+    time: "1:00 PM",
+    day: 2,
+    venue: "Bamboo Clasroom - 2",
+  },
+];
