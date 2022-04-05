@@ -1,0 +1,50 @@
+@media only screen and (max-width: 1620px) {
+	#Gallery-li-1 {
+		width: 34%;
+	}
+	#Gallery-li-4,
+	#Gallery-li-5 {
+		width: 50%;
+	}
+	#Gallery-li-6 {
+		width: 34%;
+	}
+	.Gallery-section li {
+		width: 33%;
+	}
+}
+@media only screen and (max-width: 1250px) {
+	#Gallery-li-1,
+	#Gallery-li-2,
+	#Gallery-li-3,
+	#Gallery-li-4,
+	#Gallery-li-5,
+	#Gallery-li-6,
+	#Gallery-li-7,
+	#Gallery-li-8 {
+		width: 50%;
+	}
+}
+@media only screen and (max-width: 850px) {
+	/* #Gallery-li-1,
+	#Gallery-li-2,
+	#Gallery-li-3,
+	#Gallery-li-4,
+	#Gallery-li-5,
+	#Gallery-li-6,
+	#Gallery-li-7,
+	#Gallery-li-8 {
+		width: 40%;
+		margin: 1rem;
+	} */
+	#Gallery-li-1,
+	#Gallery-li-2,
+	#Gallery-li-3,
+	#Gallery-li-4,
+	#Gallery-li-5,
+	#Gallery-li-6,
+	#Gallery-li-7,
+	#Gallery-li-8 {
+		width: 50%;
+	}
+}

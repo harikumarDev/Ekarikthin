@@ -1,0 +1,92 @@
+/*---------------------------------------*/
+/* SPONSORS*/
+/*---------------------------------------*/
+.Sponsors-section {
+  padding-top: 10vh;
+  background-color: deepskyblue;
+  padding-bottom: 15vh;
+  z-index: 5;
+  text-align: center;
+}
+
+.Sponsors-section h2 {
+  font-size: 2rem;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.Sponsors h3 {
+  color: #e67e22;
+  z-index: 5;
+}
+
+.Sponsors {
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Sponsors-heading:after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 200px;
+  background-color: #e67e22;
+  margin: 4vh auto;
+  z-index: 5;
+}
+
+.Sponsor {
+  min-width: 250px;
+  width: 25%;
+  z-index: 5;
+}
+
+.Sponsor img {
+  display: inline-block;
+  width: 80%;
+  z-index: 5;
+	background-color: white;
+	padding: 2%;
+	border-radius: 1em;
+}
+.Sponsor ul {
+  margin-top: 2%;
+	list-style: none;
+  z-index: 5;
+}
+.Sponsor li {
+  margin-bottom: 14px;
+  z-index: 5;
+}
+.Sponsor-ul ion-icon {
+  color: #e67e22;
+  font-size: 30px;
+  margin-right: 15px;
+  vertical-align: middle;
+  z-index: 5;
+}
+
+.Sponsor a:link,
+a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid #e67e22;
+  padding-bottom: 1px;
+  transition: border-bottom 0.2s;
+  color: 0.2s;
+  z-index: 5;
+}
+.Sponsor a:hover,
+a:active {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: rgb(202, 239, 250);
+  z-index: 5;
+}
+
+.Sponsor-info {
+  text-align: center;
+	margin-top: 1em;
+}

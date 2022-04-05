@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import "./Card.scss";
 
-export default function Card({ children,event, showEvent, dataImage }) {
+export default function Card({ children, event, showEvent, dataImage }) {
   const card = useRef(null);
 
   const [data, setData] = useState({
@@ -19,6 +19,7 @@ export default function Card({ children,event, showEvent, dataImage }) {
       width: card.current.offsetWidth,
       height: card.current.offsetHeight,
     });
+    // eslint-disable-next-line
   }, []);
 
   const mousePX = () => {

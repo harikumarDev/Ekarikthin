@@ -5,7 +5,7 @@ import axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import "./Layout.css";
-import Footer from "./Footer";
+import Footer from "../Global/Footer/Footer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 
@@ -17,6 +17,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
 
   const [showMenu, setShowMenu] = useState(false);
   const [pTitle, setTitle] = useState(title);
+  const [reqClass, setReqClass] = useState(false);
 
   const handleLogout = async () => {
     const { data } = await axios.get("/api/admin/logout");
@@ -39,6 +40,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
     const arr = pathname.split("/");
     if (arr[1] !== "") {
       setTitle("Ekarikthin'22 - " + arr[1].toUpperCase());
+      setReqClass(true);
     } else {
       setTitle(title);
     }
@@ -53,12 +55,11 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
 
       <header className="header">
         <nav>
-          <NavLink to="/">
-            {/* LOGO */}
+          <a href="/">
             <div className="logoNav">
               <img src="/logo.png" alt="Ekarikthin'22" height="50px" />
             </div>
-          </NavLink>
+          </a>
 
           <div className="navLinks">
             <div
@@ -111,11 +112,9 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
       </header>
 
       {/* CONTENT */}
-      <main>{children}</main>
+      <main className={reqClass ? "main-cont-lay" : ""}>{children}</main>
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }

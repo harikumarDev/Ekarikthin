@@ -4,8 +4,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { animation } from "../../utils/Animation";
-import { data } from "../../utils/Images";
+// import { data } from "../../utils/Images";
 import { CircularProgress } from "@mui/material";
+import Img from "react-cloudinary-lazy-image";
+import axios from "axios";
 
 function ImageComp({ item, ind }) {
   const controls = useAnimation();
@@ -24,7 +26,13 @@ function ImageComp({ item, ind }) {
       animate={controls}
       variants={animation(ind)}
     >
-      <img src={item.src} alt={item.title} style={{ width: "100%" }} />
+      <Img
+        cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
+        fluid={{
+          maxWidth: 300,
+        }}
+        imageName={item.public_id}
+      />
     </motion.div>
   );
 }
@@ -33,32 +41,41 @@ export default function Gallery() {
   const [model, setModel] = useState(false);
   const [image, setImage] = useState({});
   const [images, setImages] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const getImg = (img) => {
     setImage(img);
     setModel(true);
   };
 
+  const fetchImages = async () => {
+    const { data } = await axios.get("/api/gallery");
+    setImages(data.images);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    for (let i = data.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [data[i], data[j]] = [data[j], data[i]];
-    }
-    setImages(data);
+    fetchImages();
   }, []);
 
   return (
     <div className="gallery-main">
       <h1>Our MEMORIES</h1>
       <div className={model ? "model open" : "model"}>
-        <img src={image.src} alt={image.title} />
+        <Img
+          cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
+          fluid={{
+            maxWidth: 300,
+          }}
+          imageName={image.public_id}
+        />
         <AiOutlineClose
           onClick={() => setModel(false)}
           className="close-icon"
         />
       </div>
       <div className="gallery">
-        {images ? (
+        {!loading ? (
           <>
             {images.map((item, ind) => (
               <div key={ind} className="pics" onClick={() => getImg(item)}>

@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot-box">
-          <div className="footer-head">COTACT US</div>
+          <div className="footer-head">CONTACT US</div>
           <div className="foot-underline"></div>
           <div className="cont-details">
             <p>National Insitute of Technology, Nagaland</p>

@@ -1,0 +1,74 @@
+/* -------------------------------------------------------------
+--------------------------media queries-------------------------
+------------------------------------------------------------- */
+
+/*-------------------------------------------------- small laptops ------------------------------------------------*/
+/* @media only screen and (max-width: 1200px) {
+	.nav-panel,
+	.heroText,
+	.how,
+	.tests,
+	.sign,
+	.form,
+	.div-foot {
+		width: 90vw;
+	}
+	.step {
+		margin-bottom: 50px;
+	}
+	.step3 {
+		margin-bottom: 100px;
+	}
+} */
+
+/*-------------------------------------------------- large tablets ------------------------------------------------*/
+/* @media only screen and (max-width: 1023px) {
+	body {
+		font-size: 0.8rem;
+	}
+	.step {
+		margin-bottom: 50px;
+	}
+	.step3 {
+		margin-bottom: 100px;
+	}
+	.right {
+		margin-top: 150px;
+	}
+} */
+
+/*-------------------------------------------------- large phones ------------------------------------------------*/
+/* @media only screen and (max-width: 767px) {
+	body {
+		font-size: 0.7rem;
+	}
+	.nav-links {
+		display: none;
+	}
+	.feature {
+		width: 100%;
+	}
+	.howitworks .left {
+		width: 100%;
+	}
+	.howitworks .right {
+		width: 100%;
+	}
+	.city {
+		width: 100%;
+	}
+	.test {
+		width: 100%;
+	}
+	.sign .col-1-of-3 {
+		width: 75%;
+		margin-left: 12.5%;
+	}
+	.form-unit {
+		width: 90%;
+	}
+} */
+
+/*-------------------------------------------------- small phones ------------------------------------------------*/
+/* @media only screen and(max-width:510px) {
+} */

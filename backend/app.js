@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const oraganisers = require("./routes/oragniser");
 const eventRegister = require("./routes/eventRegister");
 const admin = require("./routes/admin");
+const gallery = require("./routes/gallery");
 
 dotenv.config({ path: "backend/config/config.env" });
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json({ limit: "60mb" }));
 // API's
 app.use("/api/organisers", oraganisers);
 app.use("/api/register", eventRegister);
+app.use("/api/gallery", gallery);
 app.use("/api/admin", admin);
 
 if (process.env.NODE_ENV === "PRODUCTION") {

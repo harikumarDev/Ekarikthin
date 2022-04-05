@@ -1,8 +1,138 @@
+/* ---------------------------------------
+orange: #e67e22;
+darker orange:#bf6516
+green:#73daab;
+blue:rgb(202, 239, 250);
+BLUE2:deepskyblue;
+---------------------------------------*/
+
 .home {
-  height: 93.8vh;
-  /* background: url("../../images/home.jpg") no-repeat center center fixed; */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	/* height: 93.8vh; */
+	height: 100vh;
+	/* background: url("../../images/home.jpg") no-repeat center center fixed; */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/*---------------------------------------*/
+/* BASIC SETUP */
+/*---------------------------------------*/
+html {
+	/* background-color: #fff;
+	color: rgb(0, 0, 0);
+	font-family: "Lato", "Arial", sans-serif;
+	font-weight: 800;
+	font-size: 20px;
+	text-rendering: optimizeLegibility;
+	letter-spacing: 1px;
+	word-spacing: 2px; */
+	overflow-x: hidden;
+}
+
+/*---------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*---------------------------------------*/
+.row {
+	max-width: 1140px;
+	margin: 0 auto; /* this is similar to 0 auto 0 auto */
+	/* border:1px solid greenyellow; */
+}
+
+.col {
+	display: block;
+	float: left;
+	/* margin:1% 0% 1% 1.6%; */
+	/* border:1px solid royalblue; */
+}
+.col-1-of-2 {
+	float: left;
+	width: 50%;
+}
+
+.clearfix:after {
+	content: "suraj";
+	clear: both;
+	display: block;
+	height: 0;
+	width: 100vw;
+	visibility: hidden;
+}
+/*----------------------------------------*/
+/* GENERAL UTILS */
+/*------------------------------------------*/
+.u-center-text {
+	text-align: center;
+}
+
+.u-left-text {
+	text-align: left;
+}
+
+/* .u-skew-dance:hover {
+	transition: all 0.2s;
+	transform: skewX(3deg) skewY(4deg) scale(1.1);
+	-webkit-transform: skewX(3deg) skewY(4deg) scale(1.1);
+	-moz-transform: skewX(3deg) skewY(4deg) scale(1.1);
+	-ms-transform: skewX(3deg) skewY(4deg) scale(1.1);
+	-o-transform: skewX(3deg) skewY(4deg) scale(1.1);
+	text-shadow: 0.1rem 1rem 1rem rgba(134, 134, 134, 0.4);
+}
+*/
+.u-colorful-text-1 {
+	background-image: linear-gradient(
+		to right,
+		rgba(216, 21, 21, 0.74),
+		rgba(23, 133, 177, 0.959)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-color: transparent;
+}
+
+.u-colorful-text-2 {
+	background-image: linear-gradient(to right, #c93b10, #076981);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-color: transparent;
+}
+
+.u-colorful-text-3 {
+	background-image: linear-gradient(to right, #334e23, #1a1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-color: transparent;
+}
+.u-colorful-text-4 {
+	background-image: linear-gradient(to right, #6dd5da, #0769a1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-color: transparent;
+}
+.u-margin-top {
+	margin-top: 8rem;
+}
+
+.u-margin-top-big {
+	margin-top: 16rem;
+}
+
+.u-margin-top-small {
+	margin-top: 4rem;
+}
+.u-margin-bottom {
+	margin-bottom: 8rem;
+}
+
+.u-margin-bottom-big {
+	margin-bottom: 16rem;
+}
+
+.u-margin-bottom-small {
+	margin-bottom: 4rem;
 }
