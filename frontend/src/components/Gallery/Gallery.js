@@ -4,7 +4,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { animation } from "../../utils/Animation";
-// import { data } from "../../utils/Images";
 import { CircularProgress } from "@mui/material";
 import Img from "react-cloudinary-lazy-image";
 import axios from "axios";
@@ -39,13 +38,16 @@ function ImageComp({ item, ind }) {
 
 export default function Gallery() {
   const [model, setModel] = useState(false);
+  // eslint-disable-next-line
   const [image, setImage] = useState({});
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const getImg = (img) => {
-    setImage(img);
-    setModel(true);
+    // Removing model for now
+    return;
+    // setImage(img);
+    // setModel(true);
   };
 
   const fetchImages = async () => {

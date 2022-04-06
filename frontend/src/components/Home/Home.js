@@ -11,7 +11,7 @@ import Bike from "../Global/Bike/Bike";
 
 export default function Home() {
   return (
-    <>
+    <div className="home-comp">
       <Nav />
       <Landing />
       <Features />
@@ -19,6 +19,6 @@ export default function Home() {
       <Gallery />
       <Sponsors />
       {/* <Testimonials /> */}
-    </>
+    </div>
   );
 }
