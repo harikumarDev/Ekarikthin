@@ -2,13 +2,10 @@
 /* Gallery-section */
 /*---------------------------------------*/
 .Gallery-section {
-  /* margin-top: 10rem; */
-  /* margin-bottom: 10rem; */
   width: 100%;
   height: auto;
   z-index: 5;
   position: relative;
-  /* background-color: deepskyblue; */
   background-color: #33c0e7;
 }
 .Gallery-section ul {
@@ -17,6 +14,7 @@
   width: 100%;
   height: auto;
   margin: 0;
+  text-align: center;
   z-index: 5;
   display: flex;
   flex-wrap: wrap;

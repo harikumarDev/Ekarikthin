@@ -60,7 +60,7 @@ export default function Features() {
             },
             particles: {
               number: {
-                value: 80,
+                value: 60,
               },
               size: {
                 value: 5,

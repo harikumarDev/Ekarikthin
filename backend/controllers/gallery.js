@@ -23,3 +23,22 @@ exports.getImages = async (req, res) => {
     });
   }
 };
+
+exports.getHomeImages = async (req, res) => {
+  try {
+    const images = await cloudinary.search
+      .expression("folder:Home_EK")
+      .max_results(110)
+      .execute();
+
+    res.status(200).json({
+      success: true,
+      images: images.resources,
+    });
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: err.message,
+    });
+  }
+};

@@ -6,11 +6,11 @@ export default function Event({ event, setOpen }) {
   return (
     <section className="glass">
       <div className="eve-dashboard">
-        <img src={event.image} alt={event.title} height="100%" />
+        <img src={event.image} alt={event.event} height="100%" />
       </div>
       <div className="eve-details">
         <div className="status">
-          <h1>{event.title}</h1>
+          <h1>{event.event}</h1>
         </div>
         <div className="eve-cards">
           <div className="eve-card">{event.description}</div>

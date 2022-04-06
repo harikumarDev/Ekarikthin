@@ -12,7 +12,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError } from "../../utils/Notification";
-import { indEvenCodes } from "../../utils/Events";
+import { indEventCodes } from "../../utils/Events";
 import { animation } from "../../utils/Animation";
 
 function DetailsCard({ reg, ind }) {
@@ -136,7 +136,7 @@ export default function AllRegistrations() {
               onChange={handleChange}
             >
               <MenuItem value="all">All</MenuItem>
-              {indEvenCodes.map((code, ind) => (
+              {indEventCodes.map((code, ind) => (
                 <MenuItem key={ind} value={code}>
                   {code}
                 </MenuItem>

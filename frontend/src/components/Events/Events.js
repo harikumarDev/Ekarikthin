@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Switch, Dialog } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import Card from "./Card";
-import { allEvents } from "../../utils/Data";
+import { allEvents } from "../../utils/Events";
 import "./Events.css";
 import Filter from "./Filter";
 import Event from "./Event/Event";
@@ -61,7 +61,7 @@ export default function Events() {
               showEvent={showEvent}
               dataImage={event.image}
             >
-              <h1 className="card-head-h1">{event.title}</h1>
+              <h1 className="card-head-h1">{event.event}</h1>
               <p className="card-head-p">{event.description}</p>
               <p className="card-head-p">
                 {event.date} | {event.time}

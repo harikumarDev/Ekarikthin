@@ -91,6 +91,7 @@ const Container = styled.div`
   @media (max-width: 1130px) {
     position: absolute;
     padding: 0;
+    width: 100%;
   }
 
   h4 {
