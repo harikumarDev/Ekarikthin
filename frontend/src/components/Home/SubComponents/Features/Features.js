@@ -11,25 +11,24 @@ const data = [
     icon: "infinite-outline",
     heading: "BIGGEST TECHNO-CULTURAL FEST OF NAGALAND.",
     description:
-      "lorem3 is Lorem ipsum dolor sit amet, con lorem3 lorem3 is Lorem ipsum dolor sit amet, con lorem3",
+      "Ekarikthin includes various technical and cultural activities. It is a platform for everyone to showcase their talent and creativity",
   },
   {
     icon: "alarm-outline",
     heading: "ANNUAL EVENT.",
-    description:
-      "lorem3 is Lorem ipsum dolor sit amet, con lorem3 lorem3 is Lorem ipsum dolor sit amet, con lorem3",
+    description: "It is conducted every year in the month of April or May",
   },
   {
-    icon: "leaf-outline",
+    icon: "cash-outline",
     heading: "PRIZES WORTH LAKHS OF RUPEES.",
     description:
-      "lorem3 is Lorem ipsum dolor sit amet, con lorem3 lorem3 is Lorem ipsum dolor sit amet, con lorem3",
+      "Each participant will be given a chance to win a prize worth lakhs of rupees",
   },
   {
-    icon: "cart-outline",
+    icon: "person-outline",
     heading: "SPECIAL CHIEF GUEST.",
     description:
-      "lorem3 is Lorem ipsum dolor sit amet, con lorem3 lorem3 is Lorem ipsum dolor sit amet, con lorem3",
+      "We have a special guest who will be giving a speech on the theme of Ekarikthin",
   },
 ];
 

@@ -1,33 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import Img from "react-cloudinary-lazy-image";
-import axios from "axios";
 import "../../Home.css";
 import "../../queries.css";
 import "./Gallery.css";
 import "./Gallery-queries.css";
 
-export default function Gallery() {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchImages = async () => {
-    const { data } = await axios.get("/api/gallery/home");
-    setImages(data.images);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetchImages();
-  }, []);
-
+export default function Gallery({ images }) {
   return (
     <>
       <section className="Gallery-section" id="Gallery-section">
         <div className="Gallery-img-wrapper" id="Gallery-img-wrapper">
           <ul>
-            {!loading ? (
+            {images ? (
               <>
                 {images.map((image, ind) => (
                   <li key={ind} id={`Gallery-li-${ind + 1}`}>

@@ -81,7 +81,8 @@ export default function Events() {
         }}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        maxWidth="xl"
+        maxWidth="lg"
+        disableScrollLock
       >
         <Event event={event} setOpen={setOpen} />
       </Dialog>
