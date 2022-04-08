@@ -54,10 +54,3 @@ export default function Event({ event, setOpen }) {
     </section>
   );
 }
-
-/**
- * Fix dialogue --
- * Description
- * Organisers page
- *
- */
