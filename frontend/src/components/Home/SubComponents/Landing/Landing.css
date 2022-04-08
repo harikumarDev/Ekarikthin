@@ -33,7 +33,7 @@ LANDING
 
 .Landing-logo-txt > img {
   margin-bottom: 0.26em;
-  margin-right: -0.3em;
+  margin-right: -0.4em;
 }
 
 .Landing-video-wrapper {
@@ -67,6 +67,7 @@ LANDING
 .Landing-h1 {
   font-size: 3rem;
   font-weight: 900;
+  font-family: "Dancing Script", cursive;
 }
 
 /* #Landing-Glitch-h1 {

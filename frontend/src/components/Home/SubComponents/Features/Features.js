@@ -2,8 +2,8 @@ import React from "react";
 import "../../Home.css";
 import "../../queries.css";
 import "./Features.css";
-import Particles from "react-tsparticles";
-import { loadLinksPreset } from "tsparticles-preset-links";
+// import Particles from "react-tsparticles";
+// import { loadLinksPreset } from "tsparticles-preset-links";
 import Glitch from "../../../Global/Glitch/Glitch";
 
 const data = [
@@ -21,8 +21,7 @@ const data = [
   {
     icon: "cash-outline",
     heading: "PRIZES WORTH LAKHS OF RUPEES.",
-    description:
-      "Each participant will be given a chance to win a prize worth lakhs of rupees",
+    description: "Each participant will be given a chance to win a prize",
   },
   {
     icon: "person-outline",
@@ -33,14 +32,14 @@ const data = [
 ];
 
 export default function Features() {
-  const customInit = async (engine) => {
-    await loadLinksPreset(engine);
-  };
+  // const customInit = async (engine) => {
+  //   await loadLinksPreset(engine);
+  // };
 
   return (
     <>
       <section className="Features-section" id="Features-section">
-        <Particles
+        {/* <Particles
           init={customInit}
           options={{
             background: {
@@ -59,14 +58,17 @@ export default function Features() {
             },
             particles: {
               number: {
-                value: 60,
+                value: 15,
               },
               size: {
                 value: 5,
               },
+              zIndex: {
+                value: 6,
+              }
             },
           }}
-        />
+        /> */}
         <div className="Features-heading-wrapper" id="Features-heading-wrapper">
           <h2 className="Features-heading-h2  u-colorful-text-1">
             {/* EXCITING EVENTS FOR EVERYONE */}

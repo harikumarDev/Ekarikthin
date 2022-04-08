@@ -3,82 +3,82 @@
 /*---------------------------------------*/
 
 .Testimonials-section {
-	/* margin-top:15vh; */
-	/* background-color: rgb(181, 196, 196); */
-	padding-top: 15vh;
-	padding-bottom: 15vh;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-		url(../../../../images/demon.jpg);
-	background-attachment: fixed;
-	background-size: cover;
-	z-index: 5;
-	text-align: center;
-	overflow: hidden;
-	font-size: 2rem;
+  /* margin-top:15vh; */
+  /* background-color: rgb(181, 196, 196); */
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../../../../images/Landing-poster.png);
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 999;
+  text-align: center;
+  overflow: hidden;
+  font-size: 2rem;
 }
 
 .Testimonials-section h2:after {
-	background-color: #e67e22;
-	width: 200px;
-	height: 3px;
-	display: block;
-	content: " ";
-	margin: 10vh auto 10vh auto;
-	z-index: 5;
+  background-color: #e67e22;
+  width: 200px;
+  height: 3px;
+  display: block;
+  content: " ";
+  margin: 10vh auto 10vh auto;
+  z-index: 5;
 }
 
 .tests {
-	font-size: 1rem;
-	max-width: 1140px;
-	margin: 0 auto;
-	text-align: center;
-	color: white;
-	font-weight: 300;
-	z-index: 5;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+  font-size: 1rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .test {
-	/* float: left; */
-	width: 28%;
-	min-width: 300px;
-	/* text-align: left; */
-	/* vertical-align: middle; */
-	/* align-items: center; */
-	/* border:1px solid firebrick; */
-	margin: 0 2%;
-	line-height: 145%;
-	font-style: italic;
-	z-index: 5;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  /* float: left; */
+  width: 28%;
+  min-width: 300px;
+  /* text-align: left; */
+  /* vertical-align: middle; */
+  /* align-items: center; */
+  /* border:1px solid firebrick; */
+  margin: 0 2%;
+  line-height: 145%;
+  font-style: italic;
+  z-index: 5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .test img {
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	vertical-align: middle;
-	z-index: 5;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  vertical-align: middle;
+  z-index: 5;
 }
 
 .test cite {
-	/* border: 1px solid deeppink; */
-	/* text-align: left; */
-	width: 100%;
-	padding-top: 5vh;
-	padding-bottom: 5vh;
-	display: inline-block;
-	z-index: 5;
+  /* border: 1px solid deeppink; */
+  /* text-align: left; */
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: inline-block;
+  z-index: 5;
 }
 
 .test blockquote:before {
-	margin-top: 5vh;
-	content: "\201F";
-	font-size: 400%;
-	display: block;
-	position: relative;
-	right: 7rem;
-	z-index: 5;
+  margin-top: 5vh;
+  content: "\201F";
+  font-size: 400%;
+  display: block;
+  position: relative;
+  right: 7rem;
+  z-index: 5;
 }

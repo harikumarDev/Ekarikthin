@@ -23,7 +23,7 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
     const { data } = await axios.get("/api/admin/logout");
     if (data.success) {
       localStorage.removeItem("user");
-      setUser(null);
+      setUser(null);  
       notifySuccess("Logged out succesfully");
       navigate("/");
     } else {
