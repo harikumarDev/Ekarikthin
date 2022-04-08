@@ -47,14 +47,19 @@ export default function Registrations() {
   });
 
   const [btnDisabled, setBtnDisable] = useState(false);
+  const [cost, setCost] = useState(400);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let eventCode = eventCodes[regForm.category][regForm.event];
     if (name === "category") {
       setRegForm({ ...regForm, [name]: value, event: events[value][0].event });
+      eventCode = eventCodes[value][events[value][0].event];
     } else {
       setRegForm({ ...regForm, [name]: value });
+      if (name === "event") eventCode = eventCodes[regForm.category][value];
     }
+    setCost(eventCost[eventCode]);
   };
 
   const resetForm = () => {
@@ -130,8 +135,7 @@ export default function Registrations() {
           name: "Ekarikthin'22 - NITN",
           description:
             regForm.eventCode + "," + regForm.category + "," + regForm.event,
-          image:
-            "https://scontent.fdel29-1.fna.fbcdn.net/v/t31.18172-8/25626189_1741701399470560_3598742550576128181_o.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=on0qtWrtDngAX_cYVgV&_nc_ht=scontent.fdel29-1.fna&oh=00_AT91WFTKQVCVB728gP-r5SGrH2744KGvihesgbzLxhI9fw&oe=625A1463",
+          image: "/logo.png",
           order_id: order.id,
           handler: function (response) {
             notifySuccess("You have successfully registered for the event");
@@ -228,8 +232,17 @@ export default function Registrations() {
             name="phone"
             type="number"
             required
+            InputProps={{ inputProps: { min: 999999999, max: 9999999999 } }}
             value={regForm.phone}
             onChange={handleChange}
+          />
+          <TextField
+            variant="outlined"
+            label="Cost"
+            fullWidth
+            name="cost"
+            type="number"
+            value={cost}
           />
           <FormControl fullWidth>
             <InputLabel id="pay-label">Payment Mode</InputLabel>
@@ -242,7 +255,7 @@ export default function Registrations() {
               onChange={handleChange}
             >
               <MenuItem value="At venue">At venue</MenuItem>
-              <MenuItem value="Online">Pay Online</MenuItem>
+              {/* <MenuItem value="Online">Pay Online</MenuItem> */}
             </Select>
           </FormControl>
           <div className="regSub">

@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { eventCodes } from "../../../utils/Events";
 import "./Event.css";
 
 export default function Event({ event, setOpen }) {
@@ -16,14 +17,33 @@ export default function Event({ event, setOpen }) {
           <div className="eve-card">{event.description}</div>
           <div className="eve-card">
             {event.date} | {event.time}
+            <h4 style={{ paddingTop: "10px" }}>
+              Entry Fee: {event.price === 0 ? "NIL" : event.price + " Rs"}
+            </h4>
           </div>
           <div className="eve-card terms">
-            <h3>Terms and Conditions</h3>
+            <h3>Rules {"&"} Regulations</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              ullam quas quisquam voluptatem vero ad, et omnis ipsum, deserunt
-              ea voluptatibus illo? Ab et in, error tempore aliquid quas
-              accusantium!
+              <span style={{ padding: "1em" }}>
+                The Rules for the Event are given in the PDF. You can download
+                the PDF from the below link. Try contacting the organiser for
+                any queries regarding the event.
+              </span>
+              <div>
+                <a
+                  href={`/rules/${
+                    eventCodes[event.category.toLowerCase()][event.event]
+                  }.pdf`}
+                  download
+                  style={{
+                    textDecoration: "underline",
+                    color: "red",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Download Rules PDF
+                </a>
+              </div>
             </p>
           </div>
         </div>
@@ -34,3 +54,10 @@ export default function Event({ event, setOpen }) {
     </section>
   );
 }
+
+/**
+ * Fix dialogue --
+ * Description
+ * Organisers page
+ *
+ */

@@ -62,7 +62,11 @@ export default function Events() {
               dataImage={event.image}
             >
               <h1 className="card-head-h1">{event.event}</h1>
-              <p className="card-head-p">{event.description}</p>
+              <p className="card-head-p">
+                {event.description.length > 45
+                  ? event.description.slice(0, 45) + "..."
+                  : event.description}
+              </p>
               <p className="card-head-p">
                 {event.date} | {event.time}
               </p>

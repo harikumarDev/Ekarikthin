@@ -18,6 +18,15 @@
   opacity: 0.8;
 }
 
+.MuiPaper-root::-webkit-scrollbar {
+  display: none;
+}
+
+.MuiPaper-root {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .glass {
   display: flex;
   background: white;
@@ -29,6 +38,7 @@
   );
   border-radius: 2rem;
   z-index: 5;
+  scrollbar-width: 0;
   backdrop-filter: blur(2rem);
 }
 
@@ -39,7 +49,7 @@
 .eve-dashboard > img {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  max-width: 100%;
+  width: 40rem;
 }
 
 .eve-details {
@@ -67,13 +77,14 @@
   padding: 2rem;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .eve-card.terms {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1440px) {
   .glass {
     display: block;
     flex-direction: column;
@@ -86,11 +97,12 @@
   .eve-dashboard > img {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    width: 100%;
   }
 
   .eve-details {
     display: block;
     text-align: center;
-    padding-bottom: .15em;
+    padding-bottom: 0.15em;
   }
 }
