@@ -13,6 +13,9 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
 
   useEffect(() => {
     if (user) {
@@ -24,7 +27,7 @@ export default function Login() {
     e.preventDefault();
     setDisabled(true);
     try {
-      const { data } = await axios.post("/api/admin/login", {
+      const { data } = await axiosInstance.post("/api/admin/login", {
         username,
         password,
       });

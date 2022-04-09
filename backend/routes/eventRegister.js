@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.route("/").post(eventRegister).get(getRegistrations);
 router.route("/payment").post(sendOrder);
-router.route("/payment/verify").post(confirmRegistration);
+// router.route("/payment/verify").post(confirmRegistration);
 router.route("/details").post(getDetails);
 router.route("/:id").get(getRegistrationById);
 

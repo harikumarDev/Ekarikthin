@@ -15,6 +15,9 @@ export default function VerifyToken() {
   const [regDetails, setRegDetails] = useState();
   const [token, setToken] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
 
   useEffect(() => {
     if (!user) {
@@ -27,12 +30,15 @@ export default function VerifyToken() {
     e.preventDefault();
     setDisabled(true);
     try {
-      const { data } = await axios.get(`/api/admin/details?tokenId=${token}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const { data } = await axiosInstance.get(
+        `/api/admin/details?tokenId=${token}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       if (data.success) {
         setRegDetails(data.details);
       } else {
@@ -52,7 +58,7 @@ export default function VerifyToken() {
   const updatePay = async (token) => {
     setDisabled(true);
     try {
-      const { data } = await axios.get(`/api/admin/pay?tokenId=${token}`, {
+      const { data } = await axiosInstance.get(`/api/admin/pay?tokenId=${token}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,

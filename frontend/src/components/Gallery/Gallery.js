@@ -42,6 +42,9 @@ export default function Gallery() {
   const [image, setImage] = useState({});
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
 
   const getImg = (img) => {
     // Removing model for now
@@ -50,14 +53,15 @@ export default function Gallery() {
     // setModel(true);
   };
 
-  const fetchImages = async () => {
-    const { data } = await axios.get("/api/gallery");
-    setImages(data.images);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchImages = async () => {
+      const { data } = await axiosInstance.get("/api/gallery");
+      setImages(data.images);
+      setLoading(false);
+    };
+
     fetchImages();
+    // eslint-disable-next-line
   }, []);
 
   return (

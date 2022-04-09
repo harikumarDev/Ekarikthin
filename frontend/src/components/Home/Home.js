@@ -12,14 +12,18 @@ import Bike from "../Global/Bike/Bike";
 
 export default function Home() {
   const [images, setImages] = useState(null);
-
-  const fetchImages = async () => {
-    const { data } = await axios.get("/api/gallery/home");
-    setImages(data.images);
-  };
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
 
   useEffect(() => {
+    const fetchImages = async () => {
+      const { data } = await axiosInstance.get("/api/gallery/home");
+      setImages(data.images);
+    };
+
     fetchImages();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 export const organisers = [
   {
-    name: "Saurab Pandey",
+    name: "Saurabh Pandey",
     title: "Convenor",
     image: "/organisers/pandey.webp",
     phone: "8252185444",
