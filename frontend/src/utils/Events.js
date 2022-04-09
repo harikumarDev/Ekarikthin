@@ -20,6 +20,7 @@ export const eventCodes = {
     "Voice of Ekarikthin": "CULT_VOE",
     "Dance - Solo": "CULT_DTGS",
     "Dance - Crew": "CULT_DTGC",
+    "Dance Battle": "CULT_DB",
   },
   technical: {
     "Mud Race": "TEC_MR",
@@ -29,6 +30,8 @@ export const eventCodes = {
     "Logo Designing": "TEC_LD",
     "CIVIL WITH CIVICUS": "TEC_CWC",
     Stockraze: "TEC_STK",
+    Virgowords: "MNE_VIR",
+    "Quiz Buzz": "MNE_QB",
   },
   esports: {
     COD: "ESP_COD",
@@ -46,10 +49,7 @@ export const eventCodes = {
     Futsal: "SPT_FTSL",
     Badminton: "SPT_BD",
   },
-  "mini events": {
-    Virgowords: "MNE_VIR",
-    "Quiz Buzz": "MNE_QB",
-  },
+  "mini events": {},
 };
 
 export const eventCost = {
@@ -62,6 +62,7 @@ export const eventCost = {
   CULT_VOE: 300,
   CULT_DTGS: 200,
   CULT_DTGC: 800,
+  CULT_DB: 300,
   TEC_MR: 0,
   TEC_PNP: 0,
   TEC_CC: 0,
@@ -196,6 +197,18 @@ export const events = {
       day: 2,
       venue: "Bamboo Clasroom - 2",
     },
+    {
+      event: "Dance Battle",
+      category: categories[0],
+      time: "10:00 AM",
+      price: getEventCost(categories[0], "Dance Battle"),
+      image: "/posters/dancebattle.webp",
+      description:
+        "Dancing on street few years back might not be sounded like a great idea, but today is no less than a true dance form. Dance it out on the streets where audience will not only be your biggest supporters but also the judges",
+      date: DAY2,
+      day: 2,
+      venue: "Bamboo Clasroom - 2",
+    },
   ],
   technical: [
     {
@@ -216,9 +229,9 @@ export const events = {
       price: getEventCost(categories[1], "CodeCast"),
       image: "/posters/codecast.webp",
       description:
-        "Make it work, make it right, make it fast. CodeCast is a coding competition held on CodeChef. Please register it through codechef.com",
+        "Make it work, make it right, make it fast. CodeCast is a coding competition held on HackerRank. Registration for the contest starts from 25th April",
       date: DAY2,
-      day: 2,
+      day: 2, 
       venue: "Online",
     },
     {
@@ -277,6 +290,30 @@ export const events = {
       description: "Show your trading skill without risking your real money",
       date: DAY2,
       day: 2,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Virgowords",
+      category: categories[1],
+      time: "10:00 AM",
+      price: getEventCost(categories[1], "Virgowords"),
+      image: "/posters/virgowords.webp",
+      description:
+        "To stimulate the awareness of technical & non-technical advancements an article writing competition will be conducted. The main objective of the article writing competition is to evaluate and to check the knowledge of candidates about specific topics and the way they describe the same in writing. Topic of Virgowords(Article Writing Competition) will be provided within the 5 disciplines namely Social Sciences, Culture, technical, economical and current advancement in industry",
+      date: DAY2,
+      day: 2,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Quiz Buzz",
+      category: categories[1],
+      time: "10:00 AM",
+      price: getEventCost(categories[1], "Quiz Buzz"),
+      image: "/posters/quizbuzz.webp",
+      description:
+        "Quiz Buzz is an event conducted as part of Ekarikthin 2022, NIT Nagaland. Ekarikthin is a techno-cultural fest of NIT Nagaland that is conducted annually. If you are a Science nerd - then show off your knowledge by participating in the Science and Technology quiz. Mind-boggling problems from a wide range of topics will be included. Put on your thinking caps and indulge yourself in these questions. This contest has two rounds Elimination and Final  . People who are selected in the elimination will go to the finals. It's an individual participation event. A wide range of questions is asked from Maths, Physics, Chemistry to Astronomy and Robotics",
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
   ],
@@ -419,32 +456,7 @@ export const events = {
       venue: "Bamboo Clasroom - 2",
     },
   ],
-  "mini events": [
-    {
-      event: "Virgowords",
-      category: categories[4],
-      time: "10:00 AM",
-      price: getEventCost(categories[4], "Virgowords"),
-      image: "/posters/virgowords.webp",
-      description:
-        "To stimulate the awareness of technical & non-technical advancements an article writing competition will be conducted. The main objective of the article writing competition is to evaluate and to check the knowledge of candidates about specific topics and the way they describe the same in writing. Topic of Virgowords(Article Writing Competition) will be provided within the 5 disciplines namely Social Sciences ,Culture ,technical ,economical and current advancement in industry",
-      date: DAY2,
-      day: 2,
-      venue: "Bamboo Clasroom - 2",
-    },
-    {
-      event: "Quiz Buzz",
-      category: categories[4],
-      time: "10:00 AM",
-      price: getEventCost(categories[4], "Quiz Buzz"),
-      image: "/posters/quizbuzz.webp",
-      description:
-        "Quiz Buzz is an event conducted as part of Ekarikthin 2022, NIT Nagaland. Ekarikthin is a techno-cultural fest of NIT Nagaland that is conducted annually. If you are a Science nerd - then show off your knowledge by participating in the Science and Technology quiz. Mind-boggling problems from a wide range of topics will be included. Put on your thinking caps and indulge yourself in these questions. This contest has two rounds Elimination and Final  . People who are selected in the elimination will go to the finals. It's an individual participation event. A wide range of questions is asked from Maths, Physics, Chemistry to Astronomy and Robotics",
-      date: DAY1,
-      day: 1,
-      venue: "Bamboo Clasroom - 2",
-    },
-  ],
+  "mini events": [],
 };
 
 const allEventsList = [];

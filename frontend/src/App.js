@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { ReactNotifications } from "react-notifications-component";
@@ -14,6 +14,7 @@ import Organisers from "./components/Organisers/Organisers";
 import Login from "./components/Admin/Login";
 import VerifyToken from "./components/Admin/VerifyToken";
 import AllRegistrations from "./components/Admin/AllRegistrations";
+import axios from "axios";
 
 function App() {
   const [user, setUser] = useState(
@@ -21,6 +22,18 @@ function App() {
       ? JSON.parse(localStorage.getItem("user"))
       : null
   );
+
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
+
+  useEffect(() => {
+    const hitCount = async () => {
+      await axiosInstance.get("/api/hit");
+    };
+
+    hitCount();
+  }, [axiosInstance]);
 
   return (
     <div className="App">

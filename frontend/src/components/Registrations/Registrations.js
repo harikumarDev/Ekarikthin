@@ -87,6 +87,11 @@ export default function Registrations() {
     }
     regForm.eventCode = eventCodes[regForm.category][regForm.event];
 
+    if (regForm.eventCode === "TEC_CC") {
+      notifyInfo("Registrations for CodeCast starts from 25th April");
+      return;
+    }
+
     if (regForm.paymentMode === "At venue") {
       try {
         const { data } = await axiosInstance.post("/api/register", regForm);

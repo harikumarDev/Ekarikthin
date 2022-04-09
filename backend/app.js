@@ -6,6 +6,7 @@ const oraganisers = require("./routes/oragniser");
 const eventRegister = require("./routes/eventRegister");
 const admin = require("./routes/admin");
 const gallery = require("./routes/gallery");
+const hit = require("./routes/hit");
 
 dotenv.config({ path: "backend/config/config.env" });
 const app = express();
@@ -19,6 +20,7 @@ app.use("/api/organisers", oraganisers);
 app.use("/api/register", eventRegister);
 app.use("/api/gallery", gallery);
 app.use("/api/admin", admin);
+app.use("/api/hit", hit);
 
 if (process.env.NODE_ENV === "PRODUCTION") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
