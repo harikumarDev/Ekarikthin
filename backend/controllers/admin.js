@@ -142,7 +142,7 @@ exports.updatePay = async (req, res) => {
 };
 
 exports.getAllRegistrations = async (req, res) => {
-  try { 
+  try {
     const allRegs = await eventReg.find({});
     res.status(200).json({
       success: true,
