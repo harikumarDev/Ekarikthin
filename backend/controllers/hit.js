@@ -1,7 +1,9 @@
 const Hit = require("../models/hit");
 
 exports.hitCount = async (req, res) => {
-  const ip = req.socket.remoteAddress;
+  const ip =
+    (req.headers["x-forwarded-for"] || "").split(",").shift() ||
+    req.socket.remoteAddress;
 
   try {
     const oldRes = await Hit.findOne({ ip });

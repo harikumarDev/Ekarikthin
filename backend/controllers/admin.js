@@ -54,6 +54,7 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = async (req, res) => {
+  console.log("heair");
   res.cookie("token", null, {
     expires: new Date(Date.now()),
     httpOnly: true,

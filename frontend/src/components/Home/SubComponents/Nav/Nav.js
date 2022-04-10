@@ -11,7 +11,7 @@ import { Link } from "react-scroll";
 export default function Nav() {
   return (
     <>
-      <nav className="Nav-nav">
+      <div className="Nav-nav">
         <Link href="#" to="Landing-section" smooth="true">
           <AiOutlineHome />
         </Link>
@@ -35,7 +35,7 @@ export default function Nav() {
         <Link href="#Footer-section" to="Footer-section" smooth="true">
           <RiFootprintLine />
         </Link>
-      </nav>
+      </div>
     </>
   );
 }
