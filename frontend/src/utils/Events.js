@@ -58,6 +58,7 @@ export const eventCodes = {
     Shipwreck: "MNE_SW",
     "Face Painting": "MNE_FP",
     "Short Film Contest": "MNE_SFC",
+    "Arm Wrestling": "MNE_AW",
   },
 };
 
@@ -101,6 +102,7 @@ export const eventCost = {
   MNE_FP: 0,
   MNE_SW: 0,
   MNE_SFC: 0,
+  MNE_AW: 100,
 };
 
 export const indEventCodes = Object.keys(eventCost);
@@ -117,28 +119,6 @@ export const events = {
       image: "/posters/cosplay.webp",
       description:
         "The face not tell the mood, but the costume will - Exceptional Service with unique fashion - Be someone's perfectly imperfect",
-      date: DAY1,
-      day: 1,
-      time: "10:00 AM",
-      venue: "Bamboo Clasroom - 2",
-    },
-    {
-      event: "Dance - Solo",
-      category: categories[0],
-      price: getEventCost(categories[0], "Dance - Solo"),
-      image: "/posters/dancetogroove.webp",
-      description: "Keep the stage on FIRE",
-      date: DAY1,
-      day: 1,
-      time: "10:00 AM",
-      venue: "Bamboo Clasroom - 2",
-    },
-    {
-      event: "Dance - Crew",
-      category: categories[0],
-      price: getEventCost(categories[0], "Dance - Crew"),
-      image: "/posters/dancetogroove.webp",
-      description: "Keep the stage on FIRE",
       date: DAY2,
       day: 2,
       time: "10:00 AM",
@@ -153,6 +133,17 @@ export const events = {
       description: "Beauty is not flawless - It shines even through your flaws",
       date: DAY1,
       day: 1,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Dance - Solo",
+      category: categories[0],
+      price: getEventCost(categories[0], "Dance - Solo"),
+      image: "/posters/dancetogroove.webp",
+      description: "Keep the stage on FIRE",
+      date: DAY1,
+      day: 1,
+      time: "10:00 AM",
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -173,9 +164,21 @@ export const events = {
       image: "/posters/cosplay.webp",
       description:
         "The face not tell the mood, but the costume will - Exceptional Service with unique fashion - Be someone's perfectly imperfect",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       time: "10:00 AM",
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Dance Battle",
+      category: categories[0],
+      time: "10:00 AM",
+      price: getEventCost(categories[0], "Dance Battle"),
+      image: "/posters/dancebattle.webp",
+      description:
+        "Dancing on street few years back might not be sounded like a great idea, but today is no less than a true dance form. Dance it out on the streets where audience will not only be your biggest supporters but also the judges",
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -188,6 +191,17 @@ export const events = {
         "When words fail, Music speaks. Showcase your talent through your voice on the stage of Ekarikthin. A platform for pitch perfect melodies and rhythm.",
       date: DAY1,
       day: 1,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Dance - Crew",
+      category: categories[0],
+      price: getEventCost(categories[0], "Dance - Crew"),
+      image: "/posters/dancetogroove.webp",
+      description: "Keep the stage on FIRE",
+      date: DAY1,
+      day: 1,
+      time: "10:00 AM",
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -214,18 +228,6 @@ export const events = {
       day: 2,
       venue: "Bamboo Clasroom - 2",
     },
-    {
-      event: "Dance Battle",
-      category: categories[0],
-      time: "10:00 AM",
-      price: getEventCost(categories[0], "Dance Battle"),
-      image: "/posters/dancebattle.webp",
-      description:
-        "Dancing on street few years back might not be sounded like a great idea, but today is no less than a true dance form. Dance it out on the streets where audience will not only be your biggest supporters but also the judges",
-      date: DAY2,
-      day: 2,
-      venue: "Bamboo Clasroom - 2",
-    },
   ],
   technical: [
     {
@@ -235,8 +237,8 @@ export const events = {
       price: getEventCost(categories[1], "Mud Race"),
       image: "/posters/mudrace.webp",
       description: "Let's go Robo Racing",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -271,7 +273,7 @@ export const events = {
       image: "/posters/logodesign.webp",
       description:
         "Make it work, make it right, make it fast. CodeCast is a coding competition held on CodeChef. Please register it through codechef.com",
-      date: DAY1,
+      date: "1st & 2nd May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
     },
@@ -294,8 +296,8 @@ export const events = {
       image: "/posters/civil.webp",
       description:
         "Presentation on Construction wastages and their Management with Urban and Rural development",
-      date: DAY2,
-      day: 2,
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -305,8 +307,8 @@ export const events = {
       price: getEventCost(categories[1], "Stockraze"),
       image: "/posters/stockraze.webp",
       description: "Show your trading skill without risking your real money",
-      date: DAY2,
-      day: 2,
+      date: "4th & 5th May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -329,8 +331,8 @@ export const events = {
       image: "/posters/quizbuzz.webp",
       description:
         "Quiz Buzz is an event conducted as part of Ekarikthin 2022, NIT Nagaland. Ekarikthin is a techno-cultural fest of NIT Nagaland that is conducted annually. If you are a Science nerd - then show off your knowledge by participating in the Science and Technology quiz. Mind-boggling problems from a wide range of topics will be included. Put on your thinking caps and indulge yourself in these questions. This contest has two rounds Elimination and Final  . People who are selected in the elimination will go to the finals. It's an individual participation event. A wide range of questions is asked from Maths, Physics, Chemistry to Astronomy and Robotics",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
   ],
@@ -342,8 +344,8 @@ export const events = {
       price: getEventCost(categories[2], "COD"),
       image: "/posters/cod.webp",
       description: "Escape Actuality & Play Call Of Duty.",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -353,8 +355,8 @@ export const events = {
       price: getEventCost(categories[2], "BGMI"),
       image: "/posters/bgmi.webp",
       description: "Just play your best, and forget the rest.",
-      date: DAY2,
-      day: 2,
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -375,8 +377,8 @@ export const events = {
       price: getEventCost(categories[2], "DOTA 2"),
       image: "/posters/dota.webp",
       description: "Play with the best to be the best!",
-      date: DAY2,
-      day: 2,
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -386,7 +388,7 @@ export const events = {
       price: getEventCost(categories[2], "Mobile legends"),
       image: "/posters/mobilelegends.webp",
       description: "Nothing last forever, we can change the future (alucard)",
-      date: DAY1,
+      date: "4th & 5th May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
     },
@@ -399,7 +401,7 @@ export const events = {
       price: getEventCost(categories[3], "Badminton"),
       image: "/posters/badminton.webp",
       description: "BADMINTON",
-      date: DAY1,
+      date: "4th & 5th May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
     },
@@ -422,8 +424,8 @@ export const events = {
       price: getEventCost(categories[3], "Volleyball"),
       image: "/posters/volleyball.webp",
       description: "Join the club… And be part of volleyball history",
-      date: DAY2,
-      day: 2,
+      date: "4th & 5th May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -434,8 +436,8 @@ export const events = {
       image: "/posters/rodies.webp",
       description:
         "In this event , a group of contestants travel to different destinations and participate in various tasks that challenge their physical, social and mental strength",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -457,8 +459,8 @@ export const events = {
       price: getEventCost(categories[3], "Chess"),
       image: "/posters/chess.webp",
       description: "MOVE IN SILENCE ONLY SPEAK WHEN IT'S TIME TO SAY CHECKMATE",
-      date: DAY2,
-      day: 2,
+      date: "4th & 5th May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -468,8 +470,8 @@ export const events = {
       price: getEventCost(categories[3], "Futsal"),
       image: "/posters/futsal.webp",
       description: "The game of the century",
-      date: DAY2,
-      day: 2,
+      date: "4th & 5th May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
   ],
@@ -492,8 +494,8 @@ export const events = {
       price: getEventCost(categories[4], "Wall Painting"),
       image: "/posters/wallpainting.webp",
       description: "Show your Artistic skills",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -504,8 +506,8 @@ export const events = {
       image: "/posters/picoftheday.webp",
       description:
         "When words can't speak...Make your picture speak. so, what are you waiting for.. do register now and take part in the event!!",
-      date: DAY2,
-      day: 2,
+      date: "4th & 5th May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -528,8 +530,8 @@ export const events = {
       image: "/posters/rangoli.webp",
       description:
         "Rangoli is a form of Indian folk art which is a hand-drawn picture. It is a form of folk art",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -540,8 +542,8 @@ export const events = {
       image: "/posters/shipwreck.webp",
       description:
         "Sink in the character, save yourself from the sinking ship!!",
-      date: DAY2,
-      day: 2,
+      date: "1st May",
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -563,8 +565,19 @@ export const events = {
       image: "/posters/shortfilm.webp",
       description:
         "It's a Short film contest based on a theme 'Addiction Of social Media'. Where you should show us the impact of social media on this generation People.",
-      date: DAY2,
-      day: 2,
+      date: "25th April",
+      day: 1,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Arm Wrestling",
+      category: categories[4],
+      time: "10:00 AM",
+      price: getEventCost(categories[4], "Arm Wrestling"),
+      image: "/posters/arm.webp",
+      description: "IF IT DOESN'TCHALLENGE YOU - IT DOESN'T CHANGE YOU.",
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
   ],
