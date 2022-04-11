@@ -48,9 +48,6 @@ export default function Registrations() {
 
   const [btnDisabled, setBtnDisable] = useState(false);
   const [cost, setCost] = useState(400);
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,7 +91,7 @@ export default function Registrations() {
 
     if (regForm.paymentMode === "At venue") {
       try {
-        const { data } = await axiosInstance.post("/api/register", regForm);
+        const { data } = await axios.post("/api/register", regForm);
         if (data.success) {
           notifySuccess("You have successfully registered for the event");
           const regDetails = data.data.newEventReg;
@@ -124,7 +121,7 @@ export default function Registrations() {
       try {
         const {
           data: { success, order },
-        } = await axiosInstance.post("/api/register/payment", {
+        } = await axios.post("/api/register/payment", {
           amount: eventCost[regForm.eventCode] * 100,
           eventCode: regForm.eventCode,
           email: regForm.email,

@@ -24,18 +24,14 @@ function App() {
       : null
   );
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
-
   useEffect(() => {
     const hitCount = async () => {
       const ip = await publicIp.v4();
-      await axiosInstance.get(`/api/hit?ip=${ip}`);
+      await axios.get(`/api/hit?ip=${ip}`);
     };
 
     hitCount();
-  }, [axiosInstance]);
+  }, []);
 
   return (
     <div className="App">

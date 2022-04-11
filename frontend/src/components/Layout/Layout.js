@@ -18,12 +18,9 @@ export default function Layout({ children, title = "Ekarikthin'22" }) {
   const [showMenu, setShowMenu] = useState(false);
   const [pTitle, setTitle] = useState(title);
   const [reqClass, setReqClass] = useState(false);
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
 
   const handleLogout = async () => {
-    const { data } = await axiosInstance.get("/api/admin/logout");
+    const { data } = await axios.get("/api/admin/logout");
     if (data.success) {
       localStorage.removeItem("user");
       setUser(null);

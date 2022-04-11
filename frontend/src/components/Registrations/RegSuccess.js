@@ -18,9 +18,6 @@ export default function RegSuccess() {
   // const [searchParams] = useSearchParams();
   const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(false);
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
 
   useEffect(() => {
     // const ac = new AbortController();
@@ -47,7 +44,7 @@ export default function RegSuccess() {
 
     const getRegDetails = async () => {
       try {
-        const { data } = await axiosInstance.get(`/api/register/${id}`);
+        const { data } = await axios.get(`/api/register/${id}`);
         setDetails(data.registration);
         // console.log(data);
         setLoading(false);

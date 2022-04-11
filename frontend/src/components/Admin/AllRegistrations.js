@@ -81,9 +81,6 @@ export default function AllRegistrations() {
   const [allRegis, setAllRegis] = useState(null);
   const [eventCode, setEventCode] = useState("all");
   const [data, setData] = useState(null);
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
 
   useEffect(() => {
     if (!user) {
@@ -95,15 +92,12 @@ export default function AllRegistrations() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axiosInstance.get(
-          "/api/admin/allregistrations",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${user.token}`,
-            },
-          }
-        );
+        const { data } = await axios.get("/api/admin/allregistrations", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
         setAllRegis(data.allRegs);
         setData(data.allRegs);
       } catch (err) {
