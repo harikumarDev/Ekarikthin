@@ -1,15 +1,14 @@
 const Hit = require("../models/hit");
 
 exports.hitCount = async (req, res) => {
-  const ip =
-    (req.headers["x-forwarded-for"] || "").split(",").shift() ||
-    req.socket.remoteAddress;
-
+  const { ip } = req.query;
   try {
     const oldRes = await Hit.findOne({ ip });
 
     if (!oldRes) {
       await Hit.create({ ip });
+    } else {
+      await Hit.findOneAndUpdate({ ip }, { $inc: { count: 1 } });
     }
 
     res.status(200).json({

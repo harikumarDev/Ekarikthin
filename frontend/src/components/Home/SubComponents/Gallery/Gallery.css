@@ -52,7 +52,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .Gallery-section div {
+  .Gallery-section img {
     opacity: 1;
   }
 }

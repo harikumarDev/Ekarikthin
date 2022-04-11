@@ -15,6 +15,7 @@ import Login from "./components/Admin/Login";
 import VerifyToken from "./components/Admin/VerifyToken";
 import AllRegistrations from "./components/Admin/AllRegistrations";
 import axios from "axios";
+import publicIp from "public-ip";
 
 function App() {
   const [user, setUser] = useState(
@@ -29,7 +30,8 @@ function App() {
 
   useEffect(() => {
     const hitCount = async () => {
-      await axiosInstance.get("/api/hit");
+      const ip = await publicIp.v4();
+      await axiosInstance.get(`/api/hit?ip=${ip}`);
     };
 
     hitCount();
