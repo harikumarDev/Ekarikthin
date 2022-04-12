@@ -98,9 +98,17 @@ export default function RegSuccess() {
             </span>
           </h2>
         )}
+        <p>
+          <b>Don't see an Email?</b> Check Spam section
+        </p>
         <Link
           to="/registration"
-          style={{ color: "blue", float: "right", textDecoration: "underline" }}
+          style={{
+            color: "blue",
+            float: "right",
+            textDecoration: "underline",
+            paddingTop: "1em",
+          }}
         >
           Register for another event
         </Link>

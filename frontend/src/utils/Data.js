@@ -1,6 +1,6 @@
 export const organisers = [
   {
-    name: "Metmei",
+    name: "Metmei A Phom",
     title: "Convenor",
     image: "/organisers/metmei.webp",
     phone: "7085639587",
@@ -80,12 +80,28 @@ export const organisers = [
     insta: "https://www.instagram.com/bhavana_bliss",
   },
   {
+    name: "Bendangmar",
+    title: "Sports Head",
+    image: "/organisers/benden.webp",
+    phone: "7085802723",
+    email: "bendanglkr11@gmail.com",
+    insta: "https://www.instagram.com/mar__lkr",
+  },
+  {
     name: "Akhilesh kuriyal",
     title: "Esports Head",
     image: "/organisers/akhilesh.webp",
     phone: "9121861701",
     email: "Akhilesh.kuriyal@gmail.com",
     insta: "https://www.instagram.com/akhilesh_kuriyal",
+  },
+  {
+    name: "Waluniba Jamir",
+    title: "Esports Head",
+    image: "/organisers/walu.webp",
+    phone: "6909617623",
+    email: "walujmr@gmail.com",
+    insta: "https://www.instagram.com/jamirrupali",
   },
   {
     name: "Hari kumar",
