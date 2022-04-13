@@ -16,6 +16,7 @@ import VerifyToken from "./components/Admin/VerifyToken";
 import AllRegistrations from "./components/Admin/AllRegistrations";
 import axios from "axios";
 import publicIp from "public-ip";
+import ReactGA from "react-ga";
 
 function App() {
   const [user, setUser] = useState(
@@ -29,7 +30,9 @@ function App() {
       const ip = await publicIp.v4();
       await axios.get(`/api/hit?ip=${ip}`);
     };
-
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    console.log(process.env.REACT_APP_GA);
+    ReactGA.pageview(window.location.pathname + window.location.search);
     hitCount();
   }, []);
 

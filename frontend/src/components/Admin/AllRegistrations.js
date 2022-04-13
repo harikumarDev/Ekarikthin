@@ -56,10 +56,6 @@ function DetailsCard({ reg, ind }) {
             <span style={{ color: "blue" }}>{reg.tokenId}</span>
           </div>
           <div>
-            <b>Contact: </b>
-            <span>{reg.phone}</span>
-          </div>
-          <div>
             <b>Payment Status: </b>
             <span>{reg.paid ? "Paid" : "Not Paid"}</span>
           </div>
