@@ -8,12 +8,7 @@ const admin = require("./routes/admin");
 const gallery = require("./routes/gallery");
 const hit = require("./routes/hit");
 
-if (process.env.NODE_ENV === "PRODUCTION") {
-  dotenv.config();
-} else {
-  dotenv.config({ path: "backend/.env" });
-}
-
+dotenv.config();
 const app = express();
 
 app.use(cors());

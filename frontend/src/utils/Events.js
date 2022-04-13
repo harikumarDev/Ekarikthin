@@ -83,7 +83,7 @@ export const eventCost = {
   TEC_VIR: 0,
   TEC_QB: 0,
   ESP_COD: 500,
-  ESP_BGMI: 250,
+  ESP_BGMI: 500,
   ESP_CSGO: 500,
   ESP_DOTA: 500,
   ESP_ML: 500,
@@ -101,7 +101,7 @@ export const eventCost = {
   MNE_RG: 0,
   MNE_FP: 50,
   MNE_SW: 0,
-  MNE_SFC: 0,
+  MNE_SFC: 200,
   MNE_AW: 100,
 };
 
@@ -564,8 +564,8 @@ export const events = {
       price: getEventCost(categories[4], "Short Film Contest"),
       image: "/posters/shortfilm.webp",
       description:
-        "It's a Short film contest based on a theme 'Addiction Of social Media'. Where you should show us the impact of social media on this generation People.",
-      date: "25th April",
+        "It's a Short film contest based on a theme 'Addiction Of social Media'. Where you should show us the impact of social media on this generation People. Film should be submitted on or before 1st May, 2022",
+      date: "1st May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
     },
