@@ -1,0 +1,3 @@
+Sitemap: https://ekarikthin.com/
+User-agent: *
+Disallow:
