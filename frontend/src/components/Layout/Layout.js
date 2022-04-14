@@ -9,7 +9,7 @@ import Footer from "../Global/Footer/Footer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 
-export default function Layout({ children, title = "Ekarikthin'22" }) {
+export default function Layout({ children, title = "Ekarikthin" }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
