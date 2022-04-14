@@ -2,8 +2,9 @@ const express = require("express");
 const {
   eventRegister,
   getRegistrations,
+  sendOtp,
   sendOrder,
-  confirmRegistration,
+  // confirmRegistration,
   getRegistrationById,
   getDetails,
 } = require("../controllers/eventRegister");
@@ -11,6 +12,7 @@ const {
 const router = express.Router();
 
 router.route("/").post(eventRegister).get(getRegistrations);
+router.route("/otp").post(sendOtp);
 router.route("/payment").post(sendOrder);
 // router.route("/payment/verify").post(confirmRegistration);
 router.route("/details").post(getDetails);

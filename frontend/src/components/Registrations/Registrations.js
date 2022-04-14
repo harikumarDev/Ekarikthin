@@ -10,7 +10,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import { IoIosArrowDropright } from "react-icons/io";
+// import { IoIosArrowDropright } from "react-icons/io";
 import "./Registrations.css";
 import { categories, events, eventCodes, eventCost } from "../../utils/Events";
 import {
@@ -48,6 +48,8 @@ export default function Registrations() {
 
   const [btnDisabled, setBtnDisable] = useState(false);
   const [cost, setCost] = useState(400);
+  const [otpVerify, setOtpVerify] = useState(false);
+  const [otp, setOtp] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,6 +75,25 @@ export default function Registrations() {
     });
   };
 
+  const sendOTP = async (e) => {
+    e.preventDefault();
+    setOtpVerify(true);
+    try {
+      console.log("Send otp");
+      const { data } = await axios.post("/api/register/otp", {
+        email: regForm.email,
+      });
+      if (data.success) {
+        notifySuccess("OTP sent successfully");
+      } else {
+        notifyError(data.message);
+      }
+    } catch (err) {
+      notifyError("Something went wrong. Please try again");
+      setOtpVerify(false);
+    }
+  };
+
   const registerEvent = async (e) => {
     e.preventDefault();
     setBtnDisable(true);
@@ -83,6 +104,7 @@ export default function Registrations() {
       return;
     }
     regForm.eventCode = eventCodes[regForm.category][regForm.event];
+    regForm.otp = otp;
 
     if (regForm.eventCode === "TEC_CC") {
       notifyInfo("Registrations for CodeCast starts from 25th April");
@@ -101,8 +123,11 @@ export default function Registrations() {
         }
         setBtnDisable(false);
       } catch (err) {
-        err.response.data.code === "REG_EXISTS"
+        const errCode = err.response.data.code;
+        errCode === "REG_EXISTS"
           ? notifyInfo("You have already registered for this event")
+          : errCode === "OTP_INVALID"
+          ? notifyInfo("Invalid OTP. Please try again")
           : notifyError("Something went wrong. Please try again later");
         setBtnDisable(false);
       }
@@ -176,115 +201,147 @@ export default function Registrations() {
 
   return (
     <Main>
-      <div className="form">
-        <form onSubmit={registerEvent}>
-          <TextField
-            variant="outlined"
-            label="Name"
-            fullWidth
-            name="name"
-            required
-            value={regForm.name}
-            onChange={handleChange}
-          />
-          <TextField
-            variant="outlined"
-            label="Email"
-            fullWidth
-            name="email"
-            type="email"
-            required
-            value={regForm.email}
-            onChange={handleChange}
-          />
-          <FormControl fullWidth>
-            <InputLabel id="category-label">Category</InputLabel>
-            <Select
-              labelId="category-label"
-              value={regForm.category}
-              label="Category"
-              name="category"
+      {otpVerify ? (
+        <div className="form">
+          <form onSubmit={registerEvent}>
+            <p>Enter the OTP sent to your mail</p>
+            <TextField
+              variant="outlined"
+              label="OTP"
+              fullWidth
+              name="otp"
               required
-              onChange={handleChange}
-            >
-              {categories.map((category, ind) => (
-                <MenuItem key={ind} value={category.toLowerCase()}>
-                  {category}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl fullWidth>
-            <InputLabel id="event-label">Event</InputLabel>
-            <Select
-              labelId="event-label"
-              value={regForm.event}
-              label="Event"
-              name="event"
+              type="number"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
+            <div className="regSub">
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                disabled={btnDisabled}
+              >
+                Verify
+              </Button>
+            </div>
+            <p>
+              <b>Don't see an Email?</b> Check in your Spam section
+            </p>
+          </form>
+        </div>
+      ) : (
+        <div className="form">
+          <form onSubmit={sendOTP}>
+            <TextField
+              variant="outlined"
+              label="Name"
+              fullWidth
+              name="name"
               required
+              value={regForm.name}
               onChange={handleChange}
-            >
-              {events[regForm.category].map((eve, ind) => (
-                <MenuItem key={ind} value={eve.event}>
-                  {eve.event}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <TextField
-            variant="outlined"
-            label="Phone"
-            fullWidth
-            name="phone"
-            type="number"
-            required
-            InputProps={{ inputProps: { min: 999999999, max: 9999999999 } }}
-            value={regForm.phone}
-            onChange={handleChange}
-          />
-          <TextField
-            variant="outlined"
-            label="Cost"
-            fullWidth
-            name="cost"
-            type="number"
-            value={cost}
-          />
-          <FormControl fullWidth>
-            <InputLabel id="pay-label">Payment Mode</InputLabel>
-            <Select
-              labelId="pay-label"
-              value={regForm.paymentMode}
-              label="Payement Mode"
-              name="paymentMode"
+            />
+            <TextField
+              variant="outlined"
+              label="Email"
+              fullWidth
+              name="email"
+              type="email"
               required
+              value={regForm.email}
               onChange={handleChange}
-            >
-              <MenuItem value="At venue">At venue</MenuItem>
-              {/* <MenuItem value="Online">Pay Online</MenuItem> */}
-            </Select>
-          </FormControl>
-          <div className="regSub">
-            <Button
-              type="submit"
-              variant="contained"
-              disabled={btnDisabled}
-              color="secondary"
-            >
-              {regForm.paymentMode === "At venue" ? (
-                "Submit"
-              ) : (
-                <>
-                  Continue{" "}
-                  <IoIosArrowDropright
-                    style={{ marginLeft: "8px", fontSize: "20px" }}
-                  />
-                </>
-              )}
-            </Button>
-          </div>
-        </form>
-      </div>
+            />
+            <FormControl fullWidth>
+              <InputLabel id="category-label">Category</InputLabel>
+              <Select
+                labelId="category-label"
+                value={regForm.category}
+                label="Category"
+                name="category"
+                required
+                onChange={handleChange}
+              >
+                {categories.map((category, ind) => (
+                  <MenuItem key={ind} value={category.toLowerCase()}>
+                    {category}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <FormControl fullWidth>
+              <InputLabel id="event-label">Event</InputLabel>
+              <Select
+                labelId="event-label"
+                value={regForm.event}
+                label="Event"
+                name="event"
+                required
+                onChange={handleChange}
+              >
+                {events[regForm.category].map((eve, ind) => (
+                  <MenuItem key={ind} value={eve.event}>
+                    {eve.event}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <TextField
+              variant="outlined"
+              label="Phone"
+              fullWidth
+              name="phone"
+              type="number"
+              required
+              InputProps={{ inputProps: { min: 999999999, max: 9999999999 } }}
+              value={regForm.phone}
+              onChange={handleChange}
+            />
+            <TextField
+              variant="outlined"
+              label="Cost"
+              fullWidth
+              name="cost"
+              type="number"
+              value={cost}
+            />
+            <FormControl fullWidth>
+              <InputLabel id="pay-label">Payment Mode</InputLabel>
+              <Select
+                labelId="pay-label"
+                value={regForm.paymentMode}
+                label="Payement Mode"
+                name="paymentMode"
+                required
+                onChange={handleChange}
+              >
+                <MenuItem value="At venue">At venue</MenuItem>
+                {/* <MenuItem value="Online">Pay Online</MenuItem> */}
+              </Select>
+            </FormControl>
+            <div className="regSub">
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={btnDisabled}
+                color="secondary"
+              >
+                {/* {regForm.paymentMode === "At venue" ? (
+                  "Submit"
+                ) : (
+                  <>
+                    Continue{" "}
+                    <IoIosArrowDropright
+                      style={{ marginLeft: "8px", fontSize: "20px" }}
+                    />
+                  </>
+                )} */}
+                Continue
+              </Button>
+            </div>
+          </form>
+        </div>
+      )}
     </Main>
   );
 }
