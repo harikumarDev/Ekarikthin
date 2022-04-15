@@ -59,6 +59,7 @@ export const eventCodes = {
     "Face Painting": "MNE_FP",
     "Short Film Contest": "MNE_SFC",
     "Arm Wrestling": "MNE_AW",
+    "Mountain Biking": "MNE_MB",
   },
 };
 
@@ -103,6 +104,7 @@ export const eventCost = {
   MNE_SW: 0,
   MNE_SFC: 200,
   MNE_AW: 100,
+  MNE_MB: 400,
 };
 
 export const indEventCodes = Object.keys(eventCost);
@@ -528,8 +530,18 @@ export const events = {
       time: "10:00 AM",
       price: getEventCost(categories[4], "Rangoli Competition"),
       image: "/posters/rangoli.webp",
-      description:
-        "Rangoli is a form of Indian folk art which is a hand-drawn picture. It is a form of folk art",
+      description: "Connect the right dots to make a perfect one",
+      date: DAY2,
+      day: 2,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Mountain Biking",
+      category: categories[4],
+      time: "10:00 AM",
+      price: getEventCost(categories[4], "Mountain Biking"),
+      image: "/posters/mount.webp",
+      description: "Ride a bike, feel the vibe",
       date: DAY2,
       day: 2,
       venue: "Bamboo Clasroom - 2",

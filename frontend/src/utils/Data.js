@@ -40,12 +40,12 @@ export const organisers = [
     insta: "https://www.instagram.com/chiru_deepak_",
   },
   {
-    name: "Abhinav Kumar",
+    name: "Kenisede Nakhro",
     title: "Cultural Head",
-    image: "/organisers/abhinav.webp",
-    phone: "7370032751",
-    email: "abhinav3257@gmail.com",
-    insta: "https://www.instagram.com/abhinav_02__",
+    image: "/organisers/adebu.webp",
+    phone: "7005393220",
+    email: "kenisedenkr@gmail.com",
+    insta: "https://www.instagram.com/_a_d_e_b_u_",
   },
   {
     name: "Divya Shikha",
