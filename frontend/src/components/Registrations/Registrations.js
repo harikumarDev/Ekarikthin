@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import ReactGA from "react-ga";
 // import { IoIosArrowDropright } from "react-icons/io";
 import "./Registrations.css";
 import { categories, events, eventCodes, eventCost } from "../../utils/Events";
@@ -50,6 +51,11 @@ export default function Registrations() {
   const [cost, setCost] = useState(400);
   const [otpVerify, setOtpVerify] = useState(false);
   const [otp, setOtp] = useState("");
+
+  useEffect(() => {
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    ReactGA.pageview("/registration");
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

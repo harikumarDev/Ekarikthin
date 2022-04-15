@@ -31,7 +31,7 @@ function App() {
       await axios.get(`/api/hit?ip=${ip}`);
     };
     ReactGA.initialize(process.env.REACT_APP_GA);
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview("/");
     hitCount();
   }, []);
 
@@ -45,7 +45,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="events" element={<Events />} />
               <Route path="gallery" element={<Gallery />} />
-              <Route path="organisers" element={<Organisers />} />
+              <Route path="organisers/" element={<Organisers />} />
               <Route path="registration" element={<Registrations />} />
               <Route path="registration/:id" element={<RegSuccess />} />
               <Route path="/admin/login" element={<Login />} />

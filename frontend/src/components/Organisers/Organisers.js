@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { AiFillPhone, AiFillInstagram, AiFillMail } from "react-icons/ai";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ReactGA from "react-ga";
 import "./Organisers.css";
 import { organisers } from "../../utils/Data";
 import { animation } from "../../utils/Animation";
@@ -52,6 +53,11 @@ function OrgCard({ org, ind }) {
   );
 }
 export default function Organisers() {
+  useEffect(() => {
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    ReactGA.pageview("/organisers");
+  }, []);
+
   return (
     <div className="main-cont organisers-bg">
       <h1>

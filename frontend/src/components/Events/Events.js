@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Dialog } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactGA from "react-ga";
 import Card from "./Card";
 import { allEvents } from "../../utils/Events";
 import "./Events.css";
@@ -16,6 +17,11 @@ export default function Events() {
   const [active, setActive] = useState("All");
   const [open, setOpen] = useState(false);
   const [event, setEvent] = useState({});
+
+  useEffect(() => {
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    ReactGA.pageview("/events");
+  }, []);
 
   const handleChangeDay = () => {
     const newDay = day === 1 ? 2 : 1;

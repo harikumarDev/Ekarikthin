@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ReactGA from "react-ga";
 import { TextField, Button, CircularProgress } from "@mui/material";
 import { UserContext } from "../../Context/UserContext";
 import "./Admin.css";
@@ -18,6 +19,8 @@ export default function Login() {
     if (user) {
       navigate("/");
     }
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    ReactGA.pageview("/admin/login");
   }, [user, navigate]);
 
   const handleLogin = async (e) => {

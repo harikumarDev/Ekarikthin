@@ -3,6 +3,7 @@ import "./Gallery.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ReactGA from "react-ga";
 import { animation } from "../../utils/Animation";
 import { CircularProgress } from "@mui/material";
 import Img from "react-cloudinary-lazy-image";
@@ -58,6 +59,8 @@ export default function Gallery() {
     };
 
     fetchImages();
+    ReactGA.initialize(process.env.REACT_APP_GA);
+    ReactGA.pageview("/gallery");
     // eslint-disable-next-line
   }, []);
 
