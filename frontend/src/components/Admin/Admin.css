@@ -71,6 +71,16 @@
   width: 85%;
 }
 
+.reg-main-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.reg-main-head > h3 {
+  margin-left: 0.5em;
+}
+
 .filter-reg {
   height: 4%;
   min-width: 8%;

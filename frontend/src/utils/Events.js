@@ -178,7 +178,7 @@ export const events = {
       price: getEventCost(categories[0], "Dance Battle"),
       image: "/posters/dancebattle.webp",
       description:
-        "Dancing on street few years back might not be sounded like a great idea, but today is no less than a true dance form. Dance it out on the streets where audience will not only be your biggest supporters but also the judges",
+        "Dancing on street few years back might not be sounded like a great idea, but today is no less than a true dance form. Dance it out on the streets where audience will not only be your biggest supporters but also the judges. Participants can register for Solo, Duo and Group Dance battles",
       date: DAY2,
       day: 2,
       venue: "Bamboo Clasroom - 2",

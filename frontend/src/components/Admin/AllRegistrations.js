@@ -15,6 +15,13 @@ import { notifyError } from "../../utils/Notification";
 import { indEventCodes } from "../../utils/Events";
 import { animation } from "../../utils/Animation";
 
+const dateFromObjectId = (id) => {
+  const date = new Date(parseInt(id.substring(0, 8), 16) * 1000)
+    .toString()
+    .substring(4, 21);
+  return date.substring(0, 6) + ", " + date.substring(12);
+};
+
 function DetailsCard({ reg, ind }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -62,6 +69,10 @@ function DetailsCard({ reg, ind }) {
           <div>
             <b>Payment Mode: </b>
             <span>{reg.paymentMode}</span>
+          </div>
+          <div>
+            <b>Reg. on: </b>
+            <span>{dateFromObjectId(reg._id)}</span>
           </div>
         </div>
       </div>
@@ -119,8 +130,9 @@ export default function AllRegistrations() {
   return (
     <div className="main-cont">
       <div className="allreg-head">
-        <div>
+        <div className="reg-main-head">
           <h1>All Registrations</h1>
+          <h3>({allRegis && allRegis.length})</h3>
         </div>
         <div className="filter-reg">
           <FormControl fullWidth>

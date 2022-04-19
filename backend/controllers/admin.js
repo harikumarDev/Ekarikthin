@@ -127,6 +127,10 @@ exports.updatePay = async (req, res) => {
     }
 
     details.paid = true;
+    details.updatedBy.push({
+      name: req.user.username,
+      time: new Date().getTime(),
+    });
     await details.save();
 
     res.status(200).json({

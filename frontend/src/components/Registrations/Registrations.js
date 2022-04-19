@@ -83,6 +83,14 @@ export default function Registrations() {
 
   const sendOTP = async (e) => {
     e.preventDefault();
+
+    regForm.eventCode = eventCodes[regForm.category][regForm.event];
+    if (regForm.eventCode === "TEC_CC") {
+      notifyInfo("Registrations for CodeCast starts from 25th April");
+      setBtnDisable(false);
+      return;
+    }
+
     setOtpVerify(true);
     try {
       console.log("Send otp");
@@ -109,15 +117,7 @@ export default function Registrations() {
       setBtnDisable(false);
       return;
     }
-    regForm.eventCode = eventCodes[regForm.category][regForm.event];
     regForm.otp = otp;
-
-    if (regForm.eventCode === "TEC_CC") {
-      notifyInfo("Registrations for CodeCast starts from 25th April");
-      setBtnDisable(false);
-      return;
-    }
-
     if (regForm.paymentMode === "At venue") {
       try {
         const { data } = await axios.post("/api/register", regForm);

@@ -39,6 +39,13 @@ const eventRegSchema = new mongoose.Schema(
       type: String,
       default: "At venue",
     },
+    updatedBy: [
+      {
+        name: String,
+        time: Number,
+        _id: false,
+      },
+    ],
   },
   {
     timestamps: true,
