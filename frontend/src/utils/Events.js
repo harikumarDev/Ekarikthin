@@ -94,7 +94,7 @@ export const eventCost = {
   SPT_GC: 500,
   SPT_CH: 200,
   SPT_FTSL: 500,
-  SPT_BD: 500,
+  SPT_BD: 350,
   SPT_MB: 400,
   MNE_TH: 0,
   MNE_WP: 50,
@@ -297,7 +297,7 @@ export const events = {
       price: getEventCost(categories[1], "CIVIL WITH CIVICUS"),
       image: "/posters/civil.webp",
       description:
-        "Presentation on Construction wastages and their Management with Urban and Rural development",
+        "Presentation on Construction wastages and their Management with Urban and Rural development in Nagaland",
       date: DAY1,
       day: 1,
       venue: "Bamboo Clasroom - 2",
