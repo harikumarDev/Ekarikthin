@@ -246,7 +246,7 @@ export const events = {
     {
       event: "CodeCast",
       category: categories[1],
-      time: "10:00 AM",
+      time: "2:00 PM",
       price: getEventCost(categories[1], "CodeCast"),
       image: "/posters/codecast.webp",
       description:
@@ -258,7 +258,7 @@ export const events = {
     {
       event: "Web Design",
       category: categories[1],
-      time: "10:00 AM",
+      time: "12:00 PM",
       price: getEventCost(categories[1], "Web Design"),
       image: "/posters/webdesign.webp",
       description:
@@ -445,7 +445,7 @@ export const events = {
     {
       event: "Mountain Biking",
       category: categories[3],
-      time: "10:00 AM",
+      time: "6:00 AM",
       price: getEventCost(categories[3], "Mountain Biking"),
       image: "/posters/mount.webp",
       description: "Ride a bike, feel the vibe",
