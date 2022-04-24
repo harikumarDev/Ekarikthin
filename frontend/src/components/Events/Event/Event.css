@@ -80,6 +80,11 @@
   flex-direction: column;
 }
 
+.eve-card > a {
+  color: blue;
+  text-decoration: underline;
+}
+
 .eve-card.terms {
   flex-direction: column;
 }

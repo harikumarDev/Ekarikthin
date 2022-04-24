@@ -14,7 +14,10 @@ export default function Event({ event, setOpen }) {
           <h1>{event.event}</h1>
         </div>
         <div className="eve-cards">
-          <div className="eve-card">{event.description}</div>
+          <div
+            className="eve-card"
+            dangerouslySetInnerHTML={{ __html: event.description }}
+          ></div>
           <div className="eve-card">
             {event.date} | {event.time}
             <h4 style={{ paddingTop: "10px" }}>

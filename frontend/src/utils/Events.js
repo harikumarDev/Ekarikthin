@@ -250,7 +250,7 @@ export const events = {
       price: getEventCost(categories[1], "CodeCast"),
       image: "/posters/codecast.webp",
       description:
-        "Make it work, make it right, make it fast. CodeCast is a coding competition held on HackerRank. Registration for the contest starts from 25th April",
+        "Make it work, make it right, make it fast. CodeCast is a coding competition held on HackerRank. You can signup for the contest on HackerRank using the link below <a target='_blank' href='https://hackerrank.com/codecast-nitn'>HackerRank CodeCast</a>",
       date: DAY2,
       day: 2,
       venue: "Online",

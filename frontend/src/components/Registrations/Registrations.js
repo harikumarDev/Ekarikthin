@@ -85,11 +85,6 @@ export default function Registrations() {
     e.preventDefault();
 
     regForm.eventCode = eventCodes[regForm.category][regForm.event];
-    if (regForm.eventCode === "TEC_CC") {
-      notifyInfo("Registrations for CodeCast starts from 25th April");
-      setBtnDisable(false);
-      return;
-    }
 
     setOtpVerify(true);
     try {
