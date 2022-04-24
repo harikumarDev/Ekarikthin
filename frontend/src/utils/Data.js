@@ -40,6 +40,14 @@ export const organisers = [
     insta: "https://www.instagram.com/chiru_deepak_",
   },
   {
+    name: "PTSS Bhavana",
+    title: "Finance Head",
+    image: "/organisers/bhavana.webp",
+    phone: "9492603899",
+    email: "bhavanapurnaraju123@gmail.com",
+    insta: "https://www.instagram.com/bhavana_bliss",
+  },
+  {
     name: "Kenisede Nakhro",
     title: "Cultural Head",
     image: "/organisers/adebu.webp",
@@ -72,12 +80,12 @@ export const organisers = [
     insta: "https://www.instagram.com",
   },
   {
-    name: "PTSS Bhavana",
+    name: "Abhishek Singh",
     title: "Sports Head",
-    image: "/organisers/bhavana.webp",
-    phone: "9492603899",
-    email: "bhavanapurnaraju123@gmail.com",
-    insta: "https://www.instagram.com/bhavana_bliss",
+    image: "/organisers/abhishek.webp",
+    phone: "7827675639",
+    email: "singhabhishek101078@gmail.com",
+    insta: "https://www.instagram.com/abhishek3206singh",
   },
   {
     name: "Bendangmar",

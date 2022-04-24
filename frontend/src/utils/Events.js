@@ -273,8 +273,7 @@ export const events = {
       time: "10:00 AM",
       price: getEventCost(categories[1], "Logo Designing"),
       image: "/posters/logodesign.webp",
-      description:
-        "Make it work, make it right, make it fast. CodeCast is a coding competition held on CodeChef. Please register it through codechef.com",
+      description: "The strongest logos tell simple stories",
       date: "1st & 2nd May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
