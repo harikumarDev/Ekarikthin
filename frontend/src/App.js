@@ -20,7 +20,7 @@ import ReactGA from "react-ga";
 import jwt_decode from "jwt-decode";
 import { notifyInfo } from "./utils/Notification";
 
-const expireToken = (token) => {
+const isExpired = (token) => {
   const decoded = jwt_decode(token);
   const currentTime = Date.now() / 1000;
 
@@ -51,7 +51,7 @@ function App() {
 
     if (user) {
       const token = user.token;
-      if (expireToken(token)) {
+      if (isExpired(token)) {
         notifyInfo("Your session has expired. Please login again.");
         setUser(null);
         localStorage.removeItem("user");

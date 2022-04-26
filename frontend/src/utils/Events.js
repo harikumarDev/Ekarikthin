@@ -43,7 +43,7 @@ export const eventCodes = {
   sports: {
     "Table Tennis": "SPT_TT",
     Volleyball: "SPT_VOL",
-    Rodies: "SPT_RDS",
+    Roadies: "SPT_RDS",
     "Gully Cricket": "SPT_GC",
     Chess: "SPT_CH",
     Futsal: "SPT_FTSL",
@@ -60,6 +60,7 @@ export const eventCodes = {
     "Face Painting": "MNE_FP",
     "Short Film Contest": "MNE_SFC",
     "Arm Wrestling": "MNE_AW",
+    "Kavi Sammelan": "MNE_KS",
   },
 };
 
@@ -105,6 +106,7 @@ export const eventCost = {
   MNE_SW: 0,
   MNE_SFC: 200,
   MNE_AW: 100,
+  MNE_KS: 0,
 };
 
 export const indEventCodes = Object.keys(eventCost);
@@ -430,10 +432,10 @@ export const events = {
       venue: "Bamboo Clasroom - 2",
     },
     {
-      event: "Rodies",
+      event: "Roadies",
       category: categories[3],
       time: "10:00 AM",
-      price: getEventCost(categories[3], "Rodies"),
+      price: getEventCost(categories[3], "Roadies"),
       image: "/posters/rodies.webp",
       description:
         "In this event , a group of contestants travel to different destinations and participate in various tasks that challenge their physical, social and mental strength",
@@ -553,7 +555,7 @@ export const events = {
       image: "/posters/shipwreck.webp",
       description:
         "Sink in the character, save yourself from the sinking ship!!",
-      date: "1st May",
+      date: "30th April",
       day: 1,
       venue: "Bamboo Clasroom - 2",
     },
@@ -564,8 +566,8 @@ export const events = {
       price: getEventCost(categories[4], "Face Painting"),
       image: "/posters/facepainting.webp",
       description: "Let your face be the canvas!",
-      date: DAY1,
-      day: 1,
+      date: DAY2,
+      day: 2,
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -586,7 +588,19 @@ export const events = {
       time: "10:00 AM",
       price: getEventCost(categories[4], "Arm Wrestling"),
       image: "/posters/arm.webp",
-      description: "IF IT DOESN'TCHALLENGE YOU - IT DOESN'T CHANGE YOU.",
+      description: "IF IT DOESN'TCHALLENGE YOU - IT DOESN'T CHANGE YOU",
+      date: DAY1,
+      day: 1,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Kavi Sammelan",
+      category: categories[4],
+      time: "10:00 AM",
+      price: getEventCost(categories[4], "Kavi Sammelan"),
+      image: "/posters/kavi.webp",
+      description:
+        "Poetry gives rythm to silence, light to darkness. In poetry we find the magic of metaphor, compactness of expression, use of the five senses, and simplicity or complexity of meaning in a few lines",
       date: DAY1,
       day: 1,
       venue: "Bamboo Clasroom - 2",
