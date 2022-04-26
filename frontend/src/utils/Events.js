@@ -506,8 +506,8 @@ export const events = {
       price: getEventCost(categories[4], "Wall Painting"),
       image: "/posters/wallpainting.webp",
       description: "Show your Artistic skills",
-      date: DAY2,
-      day: 2,
+      date: DAY1,
+      day: 1,
       venue: "Bamboo Clasroom - 2",
     },
     {

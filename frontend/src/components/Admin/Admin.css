@@ -71,6 +71,18 @@
   width: 85%;
 }
 
+.download-reg {
+  margin-left: auto;
+  margin-right: 3.6%;
+  margin-top: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+  .download-reg {
+    margin-top: 3.5%;
+  }
+}
+
 .reg-main-head {
   display: flex;
   align-items: baseline;

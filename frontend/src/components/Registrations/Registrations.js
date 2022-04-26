@@ -317,6 +317,9 @@ export default function Registrations() {
                 onChange={handleChange}
               >
                 <MenuItem value="At venue">At venue</MenuItem>
+                <MenuItem value="To Organiser">
+                  To Organiser (online events)
+                </MenuItem>
                 {/* <MenuItem value="Online">Pay Online</MenuItem> */}
               </Select>
             </FormControl>

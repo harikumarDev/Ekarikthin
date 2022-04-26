@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { CSVLink } from "react-csv";
 import { useNavigate } from "react-router-dom";
 import {
   CircularProgress,
@@ -20,6 +21,12 @@ const dateFromObjectId = (id) => {
     .toString()
     .substring(4, 21);
   return date.substring(0, 6) + ", " + date.substring(12);
+};
+
+const headers = [{ label: "Email", key: "email" }];
+
+const getDownloadData = (registrations) => {
+  return registrations.filter((reg) => reg.paid);
 };
 
 function DetailsCard({ reg, ind }) {
@@ -86,7 +93,11 @@ export default function AllRegistrations() {
   const { user } = useContext(UserContext);
 
   const [allRegis, setAllRegis] = useState(null);
-  const [eventCode, setEventCode] = useState("all");
+  const [eventCode, setEventCode] = useState(
+    localStorage.getItem("eventCode")
+      ? JSON.parse(localStorage.getItem("eventCode"))
+      : "all"
+  );
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -105,8 +116,15 @@ export default function AllRegistrations() {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        setAllRegis(data.allRegs);
+
         setData(data.allRegs);
+        if (eventCode === "all") {
+          setAllRegis(data.allRegs);
+        } else {
+          setAllRegis(
+            data.allRegs.filter((reg) => reg.eventCode === eventCode)
+          );
+        }
       } catch (err) {
         notifyError("Something went wrong. Please try again");
       }
@@ -119,6 +137,7 @@ export default function AllRegistrations() {
   const handleChange = (e) => {
     const { value } = e.target;
     setEventCode(value);
+    localStorage.setItem("eventCode", JSON.stringify(value));
 
     if (value === "all") {
       setAllRegis(data);
@@ -153,6 +172,27 @@ export default function AllRegistrations() {
             </Select>
           </FormControl>
         </div>
+      </div>
+      <div className="download-reg">
+        {allRegis && getDownloadData(allRegis).length > 0 && (
+          <div>
+            <CSVLink
+              data={getDownloadData(allRegis)}
+              headers={headers}
+              filename={`All Registrations - ${new Date().toLocaleDateString()}.csv`}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                backgroundColor: "purple",
+                padding: "10px",
+                borderRadius: "5px",
+                margin: "10px",
+              }}
+            >
+              Download Emails
+            </CSVLink>
+          </div>
+        )}
       </div>
       <div className="main-card-cont">
         {allRegis ? (
