@@ -17,6 +17,15 @@ import AllRegistrations from "./components/Admin/AllRegistrations";
 import axios from "axios";
 import publicIp from "public-ip";
 import ReactGA from "react-ga";
+import jwt_decode from "jwt-decode";
+import { notifyInfo } from "./utils/Notification";
+
+const expireToken = (token) => {
+  const decoded = jwt_decode(token);
+  const currentTime = Date.now() / 1000;
+
+  return decoded.exp < currentTime;
+};
 
 function App() {
   const [user, setUser] = useState(
@@ -33,6 +42,21 @@ function App() {
     ReactGA.initialize(process.env.REACT_APP_GA);
     ReactGA.pageview("/");
     hitCount();
+  }, []);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
+      : null;
+
+    if (user) {
+      const token = user.token;
+      if (expireToken(token)) {
+        notifyInfo("Your session has expired. Please login again.");
+        setUser(null);
+        localStorage.removeItem("user");
+      }
+    }
   }, []);
 
   return (
