@@ -5,7 +5,8 @@ import axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import "./Layout.css";
-import Footer from "../Global/Footer/Footer";
+// import Footer from "../Global/Footer/Footer";
+import Footer from "./Footer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 
@@ -114,7 +115,9 @@ export default function Layout({ children, title = "Ekarikthin" }) {
       {/* CONTENT */}
       <main className={reqClass ? "main-cont-lay" : ""}>{children}</main>
 
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

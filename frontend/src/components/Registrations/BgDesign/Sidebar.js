@@ -78,7 +78,10 @@ const LogoWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  min-width: 30em;
+  @media only screen and (min-width: 768px) {
+    min-width: 30em;
+  }
+
   backdrop-filter: blur(35px);
   background-color: rgba(255, 255, 255, 0.8);
   height: 100%;

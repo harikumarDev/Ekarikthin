@@ -3,7 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 // import { BiMessageSquareDetail } from "react-icons/bi";
-// import { RiServiceLine } from "react-icons/ri";
+import { RiServiceLine } from "react-icons/ri";
 import { RiFootprintLine } from "react-icons/ri";
 import "./Nav.css";
 import { Link } from "react-scroll";
@@ -22,9 +22,9 @@ export default function Nav() {
         <Link href="#Bike-section" to="Bike-section" smooth="true">
           <MdOutlineAddPhotoAlternate />
         </Link>
-        {/* <Link href="#Sponsors-section" to="Sponsors-section" smooth="true">
-					<RiServiceLine />
-				</Link> */}
+        <Link href="#Sponsors-section" to="Sponsors-section" smooth="true">
+          <RiServiceLine />
+        </Link>
         {/* <Link
 					href="#Testimonials-section"
 					to="Testimonials-section"

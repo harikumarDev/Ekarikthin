@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineCopyright } from "react-icons/ai";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 
 export default function Footer() {
+  const { user } = useContext(UserContext);
+
   const scroll = () => {
     window.scrollTo({
       top: 0,
@@ -14,11 +17,11 @@ export default function Footer() {
   };
 
   return (
-    <>
+    <section id="Footer-section">
       <div className="footer-details">
         <div>
           <div className="logo-foot">
-            <img src="/title.png" alt="ekarikthin" height="45px" />
+            <img src="/logo.png" alt="ekarikthin" height="75px" />
           </div>
           <div className="foot-text">
             <p>
@@ -36,9 +39,9 @@ export default function Footer() {
             <ul>
               <li>
                 <RiArrowRightSLine />{" "}
-                <Link onClick={scroll} to="/">
+                <a rel="noreferrer" href="/">
                   Home
-                </Link>
+                </a>
               </li>
               <li>
                 <RiArrowRightSLine />{" "}
@@ -54,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <RiArrowRightSLine />{" "}
-                <Link onClick={scroll} to="organisers">
+                <Link onClick={scroll} to="/organisers">
                   Organisers
                 </Link>
               </li>
@@ -64,12 +67,14 @@ export default function Footer() {
                   Register now!
                 </Link>
               </li>
-              <li>
-                <RiArrowRightSLine />{" "}
-                <Link onClick={scroll} to="/admin/login">
-                  Admin Login
-                </Link>
-              </li>
+              {!user && (
+                <li>
+                  <RiArrowRightSLine />{" "}
+                  <Link onClick={scroll} to="/admin/login">
+                    Admin Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -83,7 +88,7 @@ export default function Footer() {
             <p>
               <b>Email:</b>{" "}
               <span style={{ color: "#FFFF5F" }}>
-                ekarikthin@nitnagaland.ac.in
+                nitn.ekarikthin@gmail.com
               </span>
             </p>
           </div>
@@ -91,7 +96,7 @@ export default function Footer() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://www.facebook.com/Ekarikthin/"
+              href="https://www.facebook.com/Ekarikthin22/"
             >
               <BsFacebook className="social-icon" />
             </a>
@@ -112,6 +117,6 @@ export default function Footer() {
         </div>
         <div className="designed-by">Designed by students of NIT Nagaland</div>
       </div>
-    </>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import LandingVideo from "../../../../videos/Landing-cheering_crowd.mp4";
 import Poster from "../../../../images/Landing-poster.png";
 import "../../Home.css";
 import "../../queries.css";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import Glitch from "../../../Global/Glitch/Glitch";
 
 export default function Landing() {
@@ -44,12 +44,10 @@ export default function Landing() {
           </div>
           <div className="Landing-btn-div">
             <Link
-              href="#Features-section"
-              className="Landing-btn Landing-btn--white Landing-btn--slideTop  u-colorful-text-1"
-              to="Features-section"
-              smooth="true"
+              to="/registration"
+              className="Landing-btn Landing-btn--white Landing-btn--slideTop u-colorful-text-1"
             >
-              EXPLORE
+              Register Now
             </Link>
           </div>
         </div>

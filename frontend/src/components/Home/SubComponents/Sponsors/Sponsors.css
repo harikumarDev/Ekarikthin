@@ -44,6 +44,13 @@
   z-index: 5;
 }
 
+@media only screen and (max-width: 768px) {
+  .Sponsor {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
 .Sponsor img {
   display: inline-block;
   width: 80%;

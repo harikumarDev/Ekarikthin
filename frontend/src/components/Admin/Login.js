@@ -37,7 +37,8 @@ export default function Login() {
           token: data.token,
         };
         notifySuccess("Login success");
-        navigate("/");
+        // Navigate to home
+        window.location.href = "/";
         localStorage.setItem("user", JSON.stringify(userDetails));
         setUser(userDetails);
       } else {
