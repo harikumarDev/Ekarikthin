@@ -31,6 +31,7 @@ exports.eventRegister = async (req, res) => {
     paid,
     paymentMode,
     otp,
+    college,
   } = req.body;
 
   const isReg = await eventReg.findOne({
@@ -61,6 +62,7 @@ exports.eventRegister = async (req, res) => {
     event,
     email,
     phone,
+    college,
     eventCode,
     tokenId: genToken(),
     paid,

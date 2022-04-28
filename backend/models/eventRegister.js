@@ -22,6 +22,7 @@ const eventRegSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Phone number is required"],
     },
+    college: String,
     eventCode: {
       type: String,
       required: [true, "Event code is required"],

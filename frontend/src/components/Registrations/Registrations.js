@@ -42,6 +42,7 @@ export default function Registrations() {
     name: "",
     email: "",
     phone: "",
+    college: "",
     category: "cultural",
     event: "Cosplay - Solo",
     paymentMode: "At venue",
@@ -113,7 +114,10 @@ export default function Registrations() {
       return;
     }
     regForm.otp = otp;
-    if (regForm.paymentMode === "At venue") {
+    if (
+      regForm.paymentMode === "At venue" ||
+      regForm.paymentMode === "To Organiser"
+    ) {
       try {
         const { data } = await axios.post("/api/register", regForm);
         if (data.success) {
@@ -205,7 +209,7 @@ export default function Registrations() {
       {otpVerify ? (
         <div className="form">
           <form onSubmit={registerEvent}>
-            <p>Enter the OTP sent to your mail</p>
+            <p>Enter the OTP sent to your mail: {regForm.email}</p>
             <TextField
               variant="outlined"
               label="OTP"
@@ -251,6 +255,15 @@ export default function Registrations() {
               type="email"
               required
               value={regForm.email}
+              onChange={handleChange}
+            />
+            <TextField
+              variant="outlined"
+              label="College"
+              fullWidth
+              name="college"
+              type="text"
+              value={regForm.college}
               onChange={handleChange}
             />
             <FormControl fullWidth>
