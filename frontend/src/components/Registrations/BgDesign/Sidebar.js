@@ -84,7 +84,6 @@ const Container = styled.div`
 
   backdrop-filter: blur(35px);
   background-color: rgba(255, 255, 255, 0.8);
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

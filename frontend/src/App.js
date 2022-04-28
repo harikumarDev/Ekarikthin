@@ -19,6 +19,7 @@ import publicIp from "public-ip";
 import ReactGA from "react-ga";
 import jwt_decode from "jwt-decode";
 import { notifyInfo } from "./utils/Notification";
+import Webdev from "./components/Webdev/Webdev";
 
 const isExpired = (token) => {
   const decoded = jwt_decode(token);
@@ -68,6 +69,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="events" element={<Events />} />
+              <Route path="event/webdev" element={<Webdev />} />
               <Route path="gallery" element={<Gallery />} />
               <Route path="organisers/" element={<Organisers />} />
               <Route path="registration" element={<Registrations />} />

@@ -22,7 +22,7 @@ export default function Main({
 const Container = styled.div`
   background: #eefcff;
   height: 95vh;
-  margin-top: .81rem;
+  margin-top: 0.81rem;
 `;
 
 const Wrapper = styled.div`

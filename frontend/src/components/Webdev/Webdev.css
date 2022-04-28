@@ -1,0 +1,19 @@
+.webCont {
+  margin: 2em;
+}
+.webCont > h1 {
+  color: purple;
+}
+.wdForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 30%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wdForm {
+    max-width: 100%;
+  }
+}
