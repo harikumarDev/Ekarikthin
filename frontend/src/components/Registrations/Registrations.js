@@ -52,6 +52,7 @@ export default function Registrations() {
   const [cost, setCost] = useState(400);
   const [otpVerify, setOtpVerify] = useState(false);
   const [otp, setOtp] = useState("");
+  const [msg, setMsg] = useState(false);
 
   useEffect(() => {
     ReactGA.initialize(process.env.REACT_APP_GA);
@@ -60,6 +61,14 @@ export default function Registrations() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (
+      name === "event" &&
+      (value === "CIVIL WITH CIVICUS" || value === "Logo Designing")
+    ) {
+      setMsg(true);
+    } else {
+      setMsg(false);
+    }
     let eventCode = eventCodes[regForm.category][regForm.event];
     if (name === "category") {
       setRegForm({ ...regForm, [name]: value, event: events[value][0].event });
@@ -336,6 +345,12 @@ export default function Registrations() {
                 {/* <MenuItem value="Online">Pay Online</MenuItem> */}
               </Select>
             </FormControl>
+            {msg && (
+              <h4>
+                Prizes for the event are revised. Please check it under event
+                section
+              </h4>
+            )}
             <div className="regSub">
               <Button
                 type="submit"

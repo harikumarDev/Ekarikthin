@@ -115,7 +115,7 @@ export default function Layout({ children, title = "Ekarikthin" }) {
       {/* CONTENT */}
       <main className={reqClass ? "main-cont-lay" : ""}>{children}</main>
 
-      <footer>
+      <footer id="footerBtm">
         <Footer />
       </footer>
     </div>
