@@ -96,6 +96,11 @@ export default function Registrations() {
 
     regForm.eventCode = eventCodes[regForm.category][regForm.event];
 
+    if (regForm.eventCode === "SPT_FTSL") {
+      notifyInfo("Registrations for Futsal are closed");
+      return;
+    }
+
     setOtpVerify(true);
     try {
       console.log("Send otp");
