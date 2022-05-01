@@ -125,13 +125,13 @@ export const events = {
         "The face not tell the mood, but the costume will - Exceptional Service with unique fashion - Be someone's perfectly imperfect",
       date: DAY2,
       day: 2,
-      time: "10:00 AM",
+      time: "01:00 PM",
       venue: "Bamboo Clasroom - 2",
     },
     {
       event: "Ritzy",
       category: categories[0],
-      time: "10:00 AM",
+      time: "06:00 PM",
       price: getEventCost(categories[0], "Ritzy"),
       image: "/posters/ritzy.webp",
       description: "Beauty is not flawless - It shines even through your flaws",
@@ -147,13 +147,13 @@ export const events = {
       description: "Keep the stage on FIRE",
       date: DAY1,
       day: 1,
-      time: "10:00 AM",
+      time: "12:00 PM",
       venue: "Bamboo Clasroom - 2",
     },
     {
       event: "Rockville",
       category: categories[0],
-      time: "10:00 AM",
+      time: "05:00 PM",
       price: getEventCost(categories[0], "Rockville"),
       image: "/posters/rockville.webp",
       description: "Soul meets Music",
@@ -170,13 +170,13 @@ export const events = {
         "The face not tell the mood, but the costume will - Exceptional Service with unique fashion - Be someone's perfectly imperfect",
       date: DAY2,
       day: 2,
-      time: "10:00 AM",
+      time: "01:00 PM",
       venue: "Bamboo Clasroom - 2",
     },
     {
       event: "Dance Battle",
       category: categories[0],
-      time: "10:00 AM",
+      time: "11:00 AM",
       price: getEventCost(categories[0], "Dance Battle"),
       image: "/posters/dancebattle.webp",
       description:
@@ -188,7 +188,7 @@ export const events = {
     {
       event: "Voice of Ekarikthin",
       category: categories[0],
-      time: "10:00 AM",
+      time: "03:00 PM",
       price: getEventCost(categories[0], "Voice of Ekarikthin"),
       image: "/posters/voe.webp",
       description:
@@ -205,7 +205,7 @@ export const events = {
       description: "Keep the stage on FIRE",
       date: DAY1,
       day: 1,
-      time: "10:00 AM",
+      time: "12:00 PM",
       venue: "Bamboo Clasroom - 2",
     },
     {
@@ -217,13 +217,13 @@ export const events = {
         "The face not tell the mood, but the costume will - Exceptional Service with unique fashion - Be someone's perfectly imperfect",
       date: DAY2,
       day: 2,
-      time: "10:00 AM",
+      time: "01:00 PM",
       venue: "Bamboo Clasroom - 2",
     },
     {
       event: "Cosplay - Group",
       category: categories[0],
-      time: "10:00 AM",
+      time: "01:00 PM",
       price: getEventCost(categories[0], "Cosplay - Group"),
       image: "/posters/cosplay.webp",
       description:
@@ -237,7 +237,7 @@ export const events = {
     {
       event: "Mud Race",
       category: categories[1],
-      time: "10:00 AM",
+      time: "04:30 PM",
       price: getEventCost(categories[1], "Mud Race"),
       image: "/posters/mudrace.webp",
       description: "Let's go Robo Racing",
@@ -248,7 +248,7 @@ export const events = {
     {
       event: "CodeCast",
       category: categories[1],
-      time: "2:00 PM",
+      time: "2:00 PM to 4:00 PM",
       price: getEventCost(categories[1], "CodeCast"),
       image: "/posters/codecast.webp",
       description:
@@ -260,7 +260,7 @@ export const events = {
     {
       event: "Web Design",
       category: categories[1],
-      time: "12:00 PM",
+      time: "11:00 AM",
       price: getEventCost(categories[1], "Web Design"),
       image: "/posters/webdesign.webp",
       description:
@@ -283,7 +283,7 @@ export const events = {
     {
       event: "Pick N Place",
       category: categories[1],
-      time: "10:00 AM",
+      time: "01:00 PM",
       price: getEventCost(categories[1], "Pick N Place"),
       image: "/posters/picknplace.webp",
       description: "Push or Pick but Place",
@@ -294,7 +294,7 @@ export const events = {
     {
       event: "CIVIL WITH CIVICUS",
       category: categories[1],
-      time: "10:00 AM",
+      time: "02:30 PM",
       price: getEventCost(categories[1], "CIVIL WITH CIVICUS"),
       image: "/posters/civil.webp",
       description:
@@ -306,7 +306,7 @@ export const events = {
     {
       event: "Stockraze",
       category: categories[1],
-      time: "10:00 AM",
+      time: "07:30 PM to 1:30 AM",
       price: getEventCost(categories[1], "Stockraze"),
       image: "/posters/stockraze.webp",
       description: "Show your trading skill without risking your real money",
@@ -329,7 +329,7 @@ export const events = {
     {
       event: "Quiz Buzz",
       category: categories[1],
-      time: "10:00 AM",
+      time: "Round 1: 11:30 AM & Round 2: 12:30 PM",
       price: getEventCost(categories[1], "Quiz Buzz"),
       image: "/posters/quizbuzz.webp",
       description:
@@ -387,7 +387,7 @@ export const events = {
     {
       event: "Mobile legends",
       category: categories[2],
-      time: "10:00 AM",
+      time: "12:00 PM",
       price: getEventCost(categories[2], "Mobile legends"),
       image: "/posters/mobilelegends.webp",
       description: "Nothing last forever, we can change the future (alucard)",
@@ -469,7 +469,7 @@ export const events = {
     {
       event: "Chess",
       category: categories[3],
-      time: "10:00 AM",
+      time: "10:30 AM",
       price: getEventCost(categories[3], "Chess"),
       image: "/posters/chess.webp",
       description: "MOVE IN SILENCE ONLY SPEAK WHEN IT'S TIME TO SAY CHECKMATE",
@@ -480,7 +480,7 @@ export const events = {
     {
       event: "Futsal",
       category: categories[3],
-      time: "10:00 AM",
+      time: "08:00 AM",
       price: getEventCost(categories[3], "Futsal"),
       image: "/posters/futsal.webp",
       description: "The game of the century",
