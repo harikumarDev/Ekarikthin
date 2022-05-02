@@ -48,7 +48,11 @@ function DetailsCard({ reg, ind }) {
       variants={animation(ind)}
     >
       <div className="details-head">
-        <h2>{reg.name}</h2>
+        <h2>
+          {reg.name.split(" ").length > 1
+            ? reg.name.split(" ")[0] + " " + reg.name.split(" ")[1]
+            : reg.name}
+        </h2>
         <span>{reg.email}</span>
         <h4>{reg.college}</h4>
       </div>
