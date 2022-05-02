@@ -61,6 +61,7 @@ export const eventCodes = {
     "Short Film Contest": "MNE_SFC",
     "Arm Wrestling": "MNE_AW",
     "Kavi Sammelan": "MNE_KS",
+    "Instagram Photo Likes Contest": "MNE_IGLC",
   },
 };
 
@@ -107,6 +108,7 @@ export const eventCost = {
   MNE_SFC: 200,
   MNE_AW: 100,
   MNE_KS: 0,
+  MNE_IGLC: 0,
 };
 
 export const indEventCodes = Object.keys(eventCost);
@@ -131,7 +133,7 @@ export const events = {
     {
       event: "Ritzy",
       category: categories[0],
-      time: "06:00 PM",
+      time: "05:00 PM",
       price: getEventCost(categories[0], "Ritzy"),
       image: "/posters/ritzy.webp",
       description: "Beauty is not flawless - It shines even through your flaws",
@@ -387,7 +389,7 @@ export const events = {
     {
       event: "Mobile legends",
       category: categories[2],
-      time: "12:00 PM",
+      time: "11:00 AM",
       price: getEventCost(categories[2], "Mobile legends"),
       image: "/posters/mobilelegends.webp",
       description: "Nothing last forever, we can change the future (alucard)",
@@ -601,6 +603,18 @@ export const events = {
       image: "/posters/kavi.webp",
       description:
         "Poetry gives rythm to silence, light to darkness. In poetry we find the magic of metaphor, compactness of expression, use of the five senses, and simplicity or complexity of meaning in a few lines",
+      date: DAY1,
+      day: 1,
+      venue: "Bamboo Clasroom - 2",
+    },
+    {
+      event: "Instagram Photo Likes Contest",
+      category: categories[4],
+      time: "10:00 AM",
+      price: getEventCost(categories[4], "Instagram Photo Likes Contest"),
+      image: "/posters/insta.webp",
+      description:
+        "Share the Love - Get as many likes as possible for your post by May 5",
       date: DAY1,
       day: 1,
       venue: "Bamboo Clasroom - 2",

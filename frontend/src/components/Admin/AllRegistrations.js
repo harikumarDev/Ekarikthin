@@ -50,6 +50,7 @@ function DetailsCard({ reg, ind }) {
       <div className="details-head">
         <h2>{reg.name}</h2>
         <span>{reg.email}</span>
+        <h4>{reg.college}</h4>
       </div>
       <div className="details-body">
         <div className="details">
