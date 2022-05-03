@@ -15,7 +15,7 @@ export default function Sidebar({ children, title = "Register" }) {
         <h3>{title}</h3>
         <MainForm>{children}</MainForm>
       </Content>
-      <div>
+      <div style={{ padding: "1em" }}>
         <h4>The Annual Techno - Cultural Fest - NITN</h4>
       </div>
     </Container>

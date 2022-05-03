@@ -21,7 +21,7 @@ export default function Main({
 
 const Container = styled.div`
   background: #eefcff;
-  height: 95vh;
+  height: 98vh;
   margin-top: 0.81rem;
 `;
 
@@ -33,4 +33,8 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+
+  @media (max-width: 1130px) {
+    background-image: none;
+  }
 `;

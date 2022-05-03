@@ -38,6 +38,14 @@ export default function Events() {
 
   return (
     <div className="eve-cont">
+      <div className="eve-notice">
+        <p>
+          <li>
+            In case less no.of registrations, event programming/prize worth
+            might be changed, subjected to decision by the Institute
+          </li>
+        </p>
+      </div>
       <div className="eve-head">
         <h1>EVENTS (Day {day})</h1>
         <div className="eve-day">

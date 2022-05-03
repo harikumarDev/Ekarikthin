@@ -223,7 +223,7 @@ export default function Registrations() {
     <Main>
       {otpVerify ? (
         <div className="form">
-          <form onSubmit={registerEvent}>
+          <form onSubmit={registerEvent} autoComplete="false">
             <p>Enter the OTP sent to your mail: {regForm.email}</p>
             <TextField
               variant="outlined"
@@ -252,7 +252,7 @@ export default function Registrations() {
         </div>
       ) : (
         <div className="form">
-          <form onSubmit={sendOTP}>
+          <form onSubmit={sendOTP} autoComplete="false">
             <TextField
               variant="outlined"
               label="Name"
@@ -380,6 +380,14 @@ export default function Registrations() {
           </form>
         </div>
       )}
+      <div className="eve-notice">
+        <p>
+          <li>
+            In case less no.of registrations, event programming/prize worth
+            might be changed, subjected to decision by the Institute
+          </li>
+        </p>
+      </div>
     </Main>
   );
 }
