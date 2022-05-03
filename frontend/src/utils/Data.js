@@ -200,3 +200,5 @@ export const organisers = [
     insta: "https://www.instagram.com",
   },
 ];
+
+export const closedRegistrations = ["SPT_FTSL", "SPT_BD", "SPT_GC"];

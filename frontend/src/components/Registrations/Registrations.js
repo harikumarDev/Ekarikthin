@@ -20,6 +20,7 @@ import {
   notifySuccess,
 } from "../../utils/Notification";
 import Main from "./BgDesign/Main";
+import { closedRegistrations } from "../../utils/Data";
 
 const loadScript = (src) => {
   return new Promise((resolve) => {
@@ -96,8 +97,8 @@ export default function Registrations() {
 
     regForm.eventCode = eventCodes[regForm.category][regForm.event];
 
-    if (regForm.eventCode === "SPT_FTSL" || regForm.eventCode === "SPT_BD") {
-      notifyInfo("Registrations for this event are closed");
+    if (closedRegistrations.includes(regForm.eventCode)) {
+      notifyInfo(`Registrations for ${regForm.event} are closed`);
       return;
     }
 
