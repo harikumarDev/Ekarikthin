@@ -15,82 +15,25 @@ import { UserContext } from "../../Context/UserContext";
 import { notifyError } from "../../utils/Notification";
 import { indEventCodes } from "../../utils/Events";
 import { animation } from "../../utils/Animation";
-
-const dateFromObjectId = (id) => {
-  const date = new Date(parseInt(id.substring(0, 8), 16) * 1000)
-    .toString()
-    .substring(4, 21);
-  return date.substring(0, 6) + ", " + date.substring(12);
-};
+import Details from "./Details";
 
 const headers = [{ label: "Email", key: "email" }];
+const headersCC = [
+  { label: "Name", key: "name" },
+  { label: "Email", key: "email" },
+];
+const csvStyle = {
+  textDecoration: "none",
+  color: "white",
+  backgroundColor: "purple",
+  padding: "10px",
+  borderRadius: "5px",
+  margin: "10px",
+};
 
 const getDownloadData = (registrations) => {
   return registrations.filter((reg) => reg.paid);
 };
-
-function DetailsCard({ reg, ind }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      className="details-card"
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={animation(ind)}
-    >
-      <div className="details-head">
-        <h2>
-          {reg.name.split(" ").length > 1
-            ? reg.name.split(" ")[0] + " " + reg.name.split(" ")[1]
-            : reg.name}
-        </h2>
-        <span>{reg.email}</span>
-        <h4>{reg.college}</h4>
-      </div>
-      <div className="details-body">
-        <div className="details">
-          <div>
-            <b>Category: </b>
-            <span>{reg.category.toUpperCase()}</span>
-          </div>
-          <div>
-            <b>Event: </b>
-            <span>{reg.event}</span>
-          </div>
-          <div>
-            <b>Contact: </b>
-            <span>{reg.phone}</span>
-          </div>
-          <div>
-            <b>TokenId: </b>
-            <span style={{ color: "blue" }}>{reg.tokenId}</span>
-          </div>
-          <div>
-            <b>Payment Status: </b>
-            <span>{reg.paid ? "Paid" : "Not Paid"}</span>
-          </div>
-          <div>
-            <b>Payment Mode: </b>
-            <span>{reg.paymentMode}</span>
-          </div>
-          <div>
-            <b>Reg. on: </b>
-            <span>{dateFromObjectId(reg._id)}</span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 export default function AllRegistrations() {
   const navigate = useNavigate();
@@ -185,18 +128,21 @@ export default function AllRegistrations() {
               data={getDownloadData(allRegis)}
               headers={headers}
               filename={`All Registrations - ${new Date().toLocaleDateString()}.csv`}
-              style={{
-                textDecoration: "none",
-                color: "white",
-                backgroundColor: "purple",
-                padding: "10px",
-                borderRadius: "5px",
-                margin: "10px",
-              }}
+              style={csvStyle}
             >
               Download Emails
             </CSVLink>
           </div>
+        )}
+        {allRegis && eventCode === "TEC_CC" && (
+          <CSVLink
+            data={allRegis}
+            headers={headersCC}
+            filename={`CodeCast - ${new Date().toLocaleDateString()}.csv`}
+            style={csvStyle}
+          >
+            Download
+          </CSVLink>
         )}
       </div>
       <div className="main-card-cont">
@@ -213,5 +159,28 @@ export default function AllRegistrations() {
         )}
       </div>
     </div>
+  );
+}
+
+function DetailsCard({ reg, ind }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      className="details-card"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={animation(ind)}
+    >
+      <Details reg={reg} />
+    </motion.div>
   );
 }
