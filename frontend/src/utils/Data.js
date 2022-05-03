@@ -208,4 +208,8 @@ export const closedRegistrations = [
   "SPT_CH",
   "SPT_TT",
   "SPT_VOL",
+  "ESP_CSGO",
+  "ESP_DOTA",
+  "ESP_BGMI",
+  "ESP_ML",
 ];

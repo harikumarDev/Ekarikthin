@@ -10,6 +10,11 @@ import Footer from "./Footer";
 import { UserContext } from "../../Context/UserContext";
 import { notifyError, notifySuccess } from "../../utils/Notification";
 
+const getMagReleaseTime = () => {
+  const showTime = new Date(2022, 4, 4, 9, 0, 0, 0).getTime();
+  return showTime;
+};
+
 export default function Layout({ children, title = "Ekarikthin" }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -19,6 +24,7 @@ export default function Layout({ children, title = "Ekarikthin" }) {
   const [showMenu, setShowMenu] = useState(false);
   const [pTitle, setTitle] = useState(title);
   const [reqClass, setReqClass] = useState(false);
+  const showMag = new Date().getTime() >= getMagReleaseTime();
 
   const handleLogout = async () => {
     const { data } = await axios.get("/api/admin/logout");
@@ -72,6 +78,11 @@ export default function Layout({ children, title = "Ekarikthin" }) {
             <NavLink to="/events">EVENTS</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/organisers">ORGANISERS</NavLink>
+            {showMag && (
+              <a href="/magazine/Magazine.pdf" download>
+                E - MAGAZINE
+              </a>
+            )}
             {user && (
               <>
                 <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>
@@ -95,6 +106,11 @@ export default function Layout({ children, title = "Ekarikthin" }) {
               <NavLink to="/events">EVENTS</NavLink>
               <NavLink to="/gallery">GALLERY</NavLink>
               <NavLink to="/organisers">ORGANISERS</NavLink>
+              {showMag && (
+                <a href="/magazine/Magazine.pdf" download>
+                  E - MAGAZINE
+                </a>
+              )}
               {user && (
                 <>
                   <NavLink to="/admin/verify">VERIFY TOKEN</NavLink>

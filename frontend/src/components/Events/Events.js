@@ -41,7 +41,7 @@ export default function Events() {
       <div className="eve-notice">
         <p>
           <li>
-            In case less no.of registrations, event programming/prize worth
+            In case of less no.of registrations, event programming/prize worth
             might be changed, subjected to decision by the Institute
           </li>
         </p>
