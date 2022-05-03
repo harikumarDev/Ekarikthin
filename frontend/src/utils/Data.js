@@ -201,4 +201,11 @@ export const organisers = [
   },
 ];
 
-export const closedRegistrations = ["SPT_FTSL", "SPT_BD", "SPT_GC", "SPT_CH"];
+export const closedRegistrations = [
+  "SPT_FTSL",
+  "SPT_BD",
+  "SPT_GC",
+  "SPT_CH",
+  "SPT_TT",
+  "SPT_VOL",
+];
