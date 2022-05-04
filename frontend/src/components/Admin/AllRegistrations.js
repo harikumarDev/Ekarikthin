@@ -64,7 +64,6 @@ export default function AllRegistrations() {
             Authorization: `Bearer ${user.token}`,
           },
         });
-
         setData(data.allRegs);
         if (eventCode === "all") {
           setAllRegis(data.allRegs);

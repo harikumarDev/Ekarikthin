@@ -41,6 +41,12 @@ export default function Details({ reg }) {
             <b>Payment Status: </b>
             <span>{reg.paid ? "Paid" : "Not Paid"}</span>
           </div>
+          {reg.paid && (
+            <div>
+              <b>Piad to: </b>
+              <span>{reg.updatedBy.length > 0 && reg.updatedBy[0].name}</span>
+            </div>
+          )}
           <div>
             <b>Payment Mode: </b>
             <span>{reg.paymentMode}</span>

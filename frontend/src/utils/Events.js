@@ -521,7 +521,7 @@ export const events = {
       price: getEventCost(categories[4], "PIC Of the Day"),
       image: "/posters/picoftheday.webp",
       description:
-        "When words can't speak...Make your picture speak. so, what are you waiting for.. do register now and take part in the event!!",
+        "When words can't speak...Make your picture speak. so, what are you waiting for.. do register now and take part in the event!! Upload your pic using below link. <a target='_blank' href='https://forms.gle/dt7KDnpqR2T83VDF6'>Upload Pic</a>",
       date: "4th & 5th May",
       day: 1,
       venue: "Bamboo Clasroom - 2",
