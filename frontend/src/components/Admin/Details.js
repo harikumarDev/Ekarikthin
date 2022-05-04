@@ -17,7 +17,7 @@ export default function Details({ reg }) {
             : reg.name}
         </h2>
         <span>{reg.email}</span>
-        <h4>{reg.college}</h4>
+        <h4>{reg.college?.substring(0, 30)}</h4>
       </div>
       <div className="details-body">
         <div className="details">
@@ -47,10 +47,6 @@ export default function Details({ reg }) {
               <span>{reg.updatedBy.length > 0 && reg.updatedBy[0].name}</span>
             </div>
           )}
-          <div>
-            <b>Payment Mode: </b>
-            <span>{reg.paymentMode}</span>
-          </div>
           <div>
             <b>Reg. on: </b>
             <span>{dateFromObjectId(reg._id)}</span>
