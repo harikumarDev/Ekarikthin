@@ -202,14 +202,14 @@ export const organisers = [
 ];
 
 export const closedRegistrations = [
-  "SPT_FTSL",
-  "SPT_BD",
-  "SPT_GC",
-  "SPT_CH",
-  "SPT_TT",
-  "SPT_VOL",
-  "ESP_CSGO",
-  "ESP_DOTA",
-  "ESP_BGMI",
-  "ESP_ML",
+  // "SPT_FTSL",
+  // "SPT_BD",
+  // "SPT_GC",
+  // "SPT_CH",
+  // "SPT_TT",
+  // "SPT_VOL",
+  // "ESP_CSGO",
+  // "ESP_DOTA",
+  // "ESP_BGMI",
+  // "ESP_ML",
 ];
