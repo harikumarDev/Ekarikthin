@@ -2,7 +2,7 @@
 
 > ekarikthin-page-app created with React js.
 
-Ekarikhin is a React app that has a Login, Register and Reset password features of the ongoing events with both front and Back-end.Features like storing participants data with unique code and automated reminder mail of the ongoing events that participants has participated.
+Ekarikhin is a React app that displays all the information of the ongoing events with both front and Back-end.Participants can register themselves for the particular events they are intrested in.Features like storing participants data with unique code and automated reminder mail of the ongoing events that participants has participated.
 
 ## Table of contents
 * [Functionalities](#functionalities)
