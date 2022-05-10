@@ -14,9 +14,8 @@ Ekarikhin is a React app that displays all the information of the ongoing events
 
 ## Functionalities
 
-* Login with username and password
-* Create an account
-* Reset password
+* Participants can register themselves for the events
+* Unique token gets generated
 * Admin Panel
 
 ## Technologies
