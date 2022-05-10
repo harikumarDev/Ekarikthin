@@ -11,7 +11,7 @@ const { isLoggedIn } = require("../middlewares/user");
 
 const router = express.Router();
 
-router.route("/signup").post(isLoggedIn, signup);
+router.route("/signup").post(signup);
 router.route("/login").post(login);
 router.route("/logout").get(logout);
 router.route("/details").get(isLoggedIn, getRegDetails);
