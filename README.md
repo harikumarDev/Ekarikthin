@@ -20,9 +20,10 @@ Ekarikhin is a React app that displays all the information of the ongoing events
 
 ## Technologies
 
-* React js
-* HTML5
-* CSS3
+* React
+* NodeJs
+* MongoDB
+* Express
 
 ## Packages & Libraries
 
